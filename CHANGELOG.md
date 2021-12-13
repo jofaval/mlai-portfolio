@@ -8,5 +8,6 @@ All the log of changes on the project/repository
 - Subdomain successfully created
 - .htaccess created with forceful HTTPS redirection
 - Main basic index.html created
+  - Base style
 - Repository initialized
 - Created README with some brief introduction
