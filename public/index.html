@@ -108,6 +108,22 @@
             counter-increment: h6;
             content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". ";
         }
+
+        #main
+        {
+            max-width: 1240px;
+            margin: auto;
+            text-align: justify;
+            text-align-last: center;
+        	word-wrap: break-word;
+            padding: 0 1rem;
+        }
+
+        #main :is(h1, h2, h3, h4, h5, h6)
+        {
+            text-align: left;
+            text-align-last: left;
+        }
     </style>
 </head>
 <body>
