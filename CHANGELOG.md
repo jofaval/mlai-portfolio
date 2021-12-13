@@ -6,5 +6,6 @@ All the log of changes on the project/repository
 ### Added
 - Project started
 - Subdomain successfully created
+- .htaccess created with forceful HTTPS redirection
 - Main basic index.html created
 - Repository initialized
