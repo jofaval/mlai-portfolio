@@ -7,6 +7,7 @@ All the log of changes on the project/repository
 - Footer styling
 - Social links in footer
 - Implement Gzip compression on files
+- Error pages (some base HTML)
 
 
 ## 2021-12-13
