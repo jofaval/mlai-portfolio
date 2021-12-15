@@ -6,6 +6,8 @@ All the log of changes on the project/repository
 ### Added
 - Footer styling
 - Social links in footer
+- Implement Gzip compression on files
+
 
 ## 2021-12-13
 

@@ -3,3 +3,12 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteCond %{HTTPS} off
 RewriteCond %{REMOTE_ADDR} !127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Gzip [Dynamic] Compression
+# LoadModule deflate_module modules/mod_deflate.so
+
+# Only compresses HTML and XML files
+AddOutputFilterByType DEFLATE text/html
+
+# Compresses all file types except GIF, JPG/JPEG, and PNG
+SetEnvIfNoCase Request_URI "\.(?:gif|jpe?g|png)$" no-gzip
