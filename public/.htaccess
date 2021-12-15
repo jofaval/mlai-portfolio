@@ -12,3 +12,15 @@ AddOutputFilterByType DEFLATE text/html
 
 # Compresses all file types except GIF, JPG/JPEG, and PNG
 SetEnvIfNoCase Request_URI "\.(?:gif|jpe?g|png)$" no-gzip
+
+# Error
+ErrorDocument 500 ./500.html
+ErrorDocument 501 ./500.html
+ErrorDocument 502 ./500.html
+ErrorDocument 503 ./500.html
+ErrorDocument 504 ./500.html
+
+ErrorDocument 401 ./403.html
+ErrorDocument 502 ./403.html
+ErrorDocument 503 ./403.html
+ErrorDocument 404 ./404.html
