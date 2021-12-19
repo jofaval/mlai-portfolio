@@ -7,6 +7,8 @@ All the log of changes on the project/repository
 - dd() for debugging
 - Ignore build and config files
 - upload.py script with .ignore configuration file
+- Empty build dir before compiling
+- Add progress on `cli build`
 
 ### Modified
 - Improved README.md

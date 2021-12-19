@@ -82,23 +82,87 @@ function rebuild(string $file, bool $absolute = true)
 }
 
 /**
+ * Retruns all the files to compile
+ * 
+ * @param string $root The root from which to get all files
+ * @param string $base_root The default root, PUBLIC_DIR by default
+ * 
+ * @return string[]
+ */
+function get_all_files(string $root = null, string $base_root = PUBLIC_DIR)
+{
+    // If no root is given, the $base_root will be used
+    if (is_null($root)) $root = $base_root;
+
+    $files = array_diff( scandir($root), [ '.', '..' ] );
+
+    // Add absolute path
+    $files = array_map(function (string $file) use ($root)
+    {
+        return path_join($root, $file);
+    }, $files);
+
+    // Implement recursiveness
+    foreach ($files as $file_index => $file) {
+        if (is_dir($file)) { // Recurse if necessary
+            $subfiles = get_all_files($file);
+            // Delete the folder
+            unset($files[$file_index]);
+
+            $files = array_merge($files, $subfiles);
+        }
+    }
+
+    return $files;
+}
+
+/**
+ * Removes all the content from a dir
+ * 
+ * @param string $dir The target dir
+ * 
+ * @return void
+ */
+function empty_dir(string $dir)
+{
+    foreach(glob($dir . '/*') as $file) {
+        if (is_file($file)) unlink($file);
+        else if (is_dir($file)) {
+            empty_dir($file);
+            rmdir($file);
+        }
+    }
+}
+
+/**
  * Builds all the files into minimized .html
  * 
  * @return bool
  */
 function build()
 {
-    $files = [];
-
-    // TODO: get files
-    $files = glob( path_join(PUBLIC_DIR, '*.html') );
+    $files = get_all_files();
     // TODO: implementar dd(); y logs ya de paso?
-    // var_dump($files);
 
+    // Check if file exists, if it does, empty it, if it doesn't create it
     if (!file_exists(BUILD_DIR)) mkdir(BUILD_DIR);
+    else empty_dir(BUILD_DIR);
 
     $success = true;
-    foreach ($files as $file) $success &= rebuild($file);
+    $total_files = count($files);
+    for ($file_index = 0; $file_index < $total_files; $file_index++) { 
+        $file = $files[$file_index];
+
+        $success &= rebuild($file);
+        // As soon as it fails, stop it
+        if (!$success) return;
+
+        // Calculate progress
+        $human_file_index = $file_index + 1;
+        $progress = ($human_file_index / $total_files) * 100;
+        $progress = round($progress);
+        echo "A total of $progress% is done ($human_file_index/$total_files).\n";
+    }
 
     return $success;
 }
