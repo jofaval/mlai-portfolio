@@ -9,6 +9,7 @@ All the log of changes on the project/repository
 - upload.py script with `.ignore` configuration file
 - Empty build dir before compiling
 - Add progress on `cli build`
+- Home Wiki page
 
 ### Modified
 - Improved README.md
