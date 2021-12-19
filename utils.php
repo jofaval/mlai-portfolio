@@ -11,3 +11,17 @@ function path_join()
 
     return join(DIRECTORY_SEPARATOR, $dirs);
 }
+
+/**
+ * Implements the dd (dump and die) debugging option
+ * 
+ * @return void
+ */
+function dd()
+{
+    $args = func_get_args();
+
+    echo "<pre style='font-size: 16px; color: hsl(0, 50, 20);'>";
+    foreach ($args as $arg) var_dump($arg);
+    echo "</pre>";
+}

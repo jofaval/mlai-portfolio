@@ -4,6 +4,7 @@ All the log of changes on the project/repository
 ## 2021-12-19
 ### Added
 - StackOverflow story social link
+- dd() for debugging
 
 ### Modified
 - Improved README.md
