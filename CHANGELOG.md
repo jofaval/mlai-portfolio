@@ -24,6 +24,7 @@ All the log of changes on the project/repository
 - Implement `get_content`
   - it now `compiles` the content with the use of `require`
 - `.php` files will get compiled to `.html`
+- Add total time to `upload.py` and translate some text
 
 ### Fixed
 - Build target dir is now the correct path

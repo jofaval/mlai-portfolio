@@ -251,10 +251,15 @@ def build() -> None:
 
     returns None
     """
+    start = time.time()
 
     response = os.system('php cli build')
 
     print(response)
+
+    end = time.time()
+    progress = datetime.timedelta(seconds=(end - start))
+    print('Total build time:', progress)
 
 def main() -> None:
     start = time.time()
@@ -266,7 +271,7 @@ def main() -> None:
 
     end = time.time()
     progress = datetime.timedelta(seconds=(end - start))
-    print('Tiempo total de ejecución:', progress)
+    print('Total execution time:', progress)
 
 DEBUG = False
 if __name__ == '__main__':
