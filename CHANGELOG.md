@@ -6,6 +6,7 @@ All the log of changes on the project/repository
 - StackOverflow story social link
 - dd() for debugging
 - Ignore build and config files
+- upload.py script with .ignore configuration file
 
 ### Modified
 - Improved README.md

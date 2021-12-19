@@ -1,0 +1,29 @@
+.git/*
+.vscode/*
+backend/db/*
+backend/logs/*
+production/*
+seo.html
+import.txt
+import.csv
+deploy.bat
+# img/*
+backup.bat
+ssh-connect.bat
+cli/*
+cli.bat
+# *.bat
+doc/*
+
+build.bat
+builder/*
+CHANGELOG.md
+cli
+config/*
+paths.php
+production/*
+public/*
+README.md
+require.php
+TODO
+utils.php
