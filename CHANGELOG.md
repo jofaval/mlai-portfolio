@@ -23,6 +23,7 @@ All the log of changes on the project/repository
 - `cli build` now creates subfolders if doesn't previously exist
 - Implement `get_content`
   - it now `compiles` the content with the use of `require`
+- `.php` files will get compiled to `.html`
 
 ### Fixed
 - Build target dir is now the correct path
