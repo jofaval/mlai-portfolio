@@ -13,6 +13,7 @@ All the log of changes on the project/repository
 - Frontend section
   - Components & Layouts
   - A library to interect with them
+- String utilities
 
 ### Modified
 - Improved README.md
