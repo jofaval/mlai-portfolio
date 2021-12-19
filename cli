@@ -113,8 +113,7 @@ function rebuild(string $file, bool $absolute = true)
  * @var string[]
  */
 define('IGNORE_FILES', [
-    'index.html',
-    'projects/*',
+    
 ]);
 
 /**

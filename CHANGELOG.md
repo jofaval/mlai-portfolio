@@ -26,6 +26,7 @@ All the log of changes on the project/repository
 ### Fixed
 - Build target dir is now the correct path
 - Add missing, get_content in `cli build`
+- `str_contains` buggin the `IGNORE_FILES` logic, it was cheking `str_pos` for an `int` not a `bool`
 
 ## 2021-12-15
 

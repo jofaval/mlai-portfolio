@@ -78,5 +78,5 @@ function str_ends_with(string $haystack, string $needle)
  */
 function str_contains(string $haystack, string $needle)
 {
-    return strpos($haystack, $needle) !== -1;
+    return strpos($haystack, $needle) !== false;
 }
