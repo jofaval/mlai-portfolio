@@ -8,6 +8,13 @@ require_once 'require.php';
 define('ARGS', $argv);
 
 /**
+ * The default chmod permissions
+ * 
+ * @var int
+ */
+define('PERMISSIONS', 0755);
+
+/**
  * Create a project
  * 
  * @param string $name
@@ -73,9 +80,14 @@ function rebuild(string $file, bool $absolute = true)
     if (empty($file)) return false;
 
     // Paths starts at public/ 
-    $new_file_path = path_join(BUILD_DIR, basename($file));
+    $new_file_path = str_replace(PUBLIC_DIR, BUILD_DIR, $file);
     $content = file_get_contents($file);
 
+    // Create the new folder architecture if doesn't exist yet
+    $new_dir = dirname($new_file_path);
+    if (!file_exists($new_dir)) mkdir($new_dir, PERMISSIONS, true);
+
+    // Input the hew content
     $success = file_put_contents($new_file_path, $content) !== false;
 
     return $success;
@@ -161,7 +173,7 @@ function build()
         $human_file_index = $file_index + 1;
         $progress = ($human_file_index / $total_files) * 100;
         $progress = round($progress);
-        echo "A total of $progress% is done ($human_file_index/$total_files).\n";
+        echo "A total of $progress% has been compiled, ($human_file_index/$total_files).\n";
     }
 
     return $success;

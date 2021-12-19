@@ -12,6 +12,7 @@ All the log of changes on the project/repository
 
 ### Modified
 - Improved README.md
+- `cli build` now creates subfolders if doesn't previously exist
 
 ### Fixed
 - Build target dir is now the correct path
