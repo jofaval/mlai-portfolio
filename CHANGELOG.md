@@ -9,6 +9,9 @@ All the log of changes on the project/repository
 ### Modified
 - Improved README.md
 
+### Fixed
+- Build target dir is now the correct path
+
 ## 2021-12-15
 
 ### Added

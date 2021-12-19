@@ -73,7 +73,7 @@ function rebuild(string $file, bool $absolute = true)
     if (empty($file)) return false;
 
     // Paths starts at public/ 
-    $new_file_path = $file;
+    $new_file_path = path_join(BUILD_DIR, basename($file));
     $content = '';
 
     $success = file_put_contents($new_file_path, $content) !== false;
@@ -93,7 +93,7 @@ function build()
     // TODO: get files
     $files = glob( path_join(PUBLIC_DIR, '*.html') );
     // TODO: implementar dd(); y logs ya de paso?
-    var_dump($files);
+    // var_dump($files);
 
     if (!file_exists(BUILD_DIR)) mkdir(BUILD_DIR);
 
