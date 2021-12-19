@@ -22,6 +22,7 @@ All the log of changes on the project/repository
 - Improved README.md
 - `cli build` now creates subfolders if doesn't previously exist
 - Implement `get_content`
+  - it now `compiles` the content with the use of `require`
 
 ### Fixed
 - Build target dir is now the correct path

@@ -72,7 +72,12 @@ $action = get_action();
  */
 function get_content(string $file)
 {
-    $content = file_get_contents($file);
+    // DEPRECATED
+    // $content = file_get_contents($file);
+
+    ob_start();
+    require $file;
+    $content = ob_get_clean();
 
     return $content;
 }
