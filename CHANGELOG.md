@@ -13,6 +13,7 @@ All the log of changes on the project/repository
 
 ### Fixed
 - Build target dir is now the correct path
+- Add missing, get_content in `cli build`
 
 ## 2021-12-15
 

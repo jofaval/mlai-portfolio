@@ -74,7 +74,7 @@ function rebuild(string $file, bool $absolute = true)
 
     // Paths starts at public/ 
     $new_file_path = path_join(BUILD_DIR, basename($file));
-    $content = '';
+    $content = file_get_contents($file);
 
     $success = file_put_contents($new_file_path, $content) !== false;
 
