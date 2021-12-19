@@ -63,6 +63,20 @@ function get_action()
 
 $action = get_action();
 
+/**
+ * Get the real content of a file, already compiled
+ * 
+ * @param string $file The file path
+ * 
+ * @return string
+ */
+function get_content(string $file)
+{
+    $content = file_get_contents($file);
+
+    return $content;
+}
+
 // TODO: parse into actions.php inside "cli" folder
 /**
  * Rebuilds a single file
@@ -81,7 +95,7 @@ function rebuild(string $file, bool $absolute = true)
 
     // Paths starts at public/ 
     $new_file_path = str_replace(PUBLIC_DIR, BUILD_DIR, $file);
-    $content = file_get_contents($file);
+    $content = get_content($file);
 
     // Create the new folder architecture if doesn't exist yet
     $new_dir = dirname($new_file_path);

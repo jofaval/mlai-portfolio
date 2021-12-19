@@ -4,15 +4,16 @@ All the log of changes on the project/repository
 ## 2021-12-19
 ### Added
 - StackOverflow story social link
-- dd() for debugging
+- `dd()` for debugging
 - Ignore build and config files
-- upload.py script with .ignore configuration file
+- upload.py script with `.ignore` configuration file
 - Empty build dir before compiling
 - Add progress on `cli build`
 
 ### Modified
 - Improved README.md
 - `cli build` now creates subfolders if doesn't previously exist
+- Implement `get_content`
 
 ### Fixed
 - Build target dir is now the correct path
