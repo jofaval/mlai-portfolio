@@ -10,6 +10,9 @@ All the log of changes on the project/repository
 - Empty build dir before compiling
 - Add progress on `cli build`
 - Home Wiki page
+- Frontend section
+  - Components & Layouts
+  - A library to interect with them
 
 ### Modified
 - Improved README.md
