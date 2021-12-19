@@ -176,7 +176,7 @@ def getfiles() -> List[str]:
 
     returns List[str]
     """
-    absolutepath = os.path.join(baselocaldir, '**/**')
+    absolutepath = os.path.join(targetlocaldir, '**/**')
 
     files = [ parsefile(file) for file in glob.iglob(absolutepath, recursive=True) if isfileallowed(file) ]
     # files.append(os.path.join(baselocaldir, '.htaccess'))
