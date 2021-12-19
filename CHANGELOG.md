@@ -15,6 +15,7 @@ All the log of changes on the project/repository
   - A library to interect with them
 - String utilities
 - There's now an ignore files in `cli build`
+- Implement global exception handler
 
 ### Modified
 - Improved README.md

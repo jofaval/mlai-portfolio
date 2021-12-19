@@ -25,9 +25,22 @@ function dd()
     foreach ($args as $arg) var_dump($arg);
     echo "</pre>";
 
-    die;    
+    die;
 }
 
+/**
+ * Catches and handles an exception/error throwed in the app
+ * 
+ * @param Throwable $throwed The exception/error throwed in the app
+ * 
+ * @return void
+ */
+function general_exception_handler(Throwable $throwed)
+{
+    dd($throwed);
+}
+
+set_exception_handler('general_exception_handler');
 
 /**
  * Determins if a $needle is at the start of the $haystack
