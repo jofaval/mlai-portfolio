@@ -1,6 +1,13 @@
 # CHANGELOG #
 All the log of changes on the project/repository
 
+## 2021-12-19
+### Added
+- StackOverflow story social link
+
+### Modified
+- Improved README.md
+
 ## 2021-12-15
 
 ### Added
