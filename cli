@@ -108,6 +108,16 @@ function rebuild(string $file, bool $absolute = true)
 }
 
 /**
+ * All the files to ignore
+ * 
+ * @var string[]
+ */
+define('IGNORE_FILES', [
+    'index.html',
+    'projects/*',
+]);
+
+/**
  * Retruns all the files to compile
  * 
  * @param string $root The root from which to get all files
@@ -169,6 +179,17 @@ function build()
 {
     $files = get_all_files();
     // TODO: implementar dd(); y logs ya de paso?
+
+    $files = array_filter($files, function(string $file)
+    {
+        foreach (IGNORE_FILES as $ignore) {
+            $ignore = str_replace('*', '', $ignore);
+
+            if (str_ends_with($file, $ignore) || str_contains($file, $ignore)) return false;
+        }
+
+        return true;
+    });
 
     // Check if file exists, if it does, empty it, if it doesn't create it
     if (!file_exists(BUILD_DIR)) mkdir(BUILD_DIR);

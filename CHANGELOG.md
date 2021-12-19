@@ -14,6 +14,7 @@ All the log of changes on the project/repository
   - Components & Layouts
   - A library to interect with them
 - String utilities
+- There's now an ignore files in `cli build`
 
 ### Modified
 - Improved README.md
