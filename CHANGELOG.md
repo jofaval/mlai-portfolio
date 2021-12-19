@@ -16,6 +16,14 @@ All the log of changes on the project/repository
 - Implement Gzip compression on files
 - Error pages (some base HTML)
 
+## 2021-12-14
+
+### Added
+- Utils file
+  - Path join utility
+- Require file
+- Paths file
+- CLI command build design
 
 ## 2021-12-13
 

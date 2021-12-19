@@ -1,0 +1,106 @@
+<?php
+
+require_once 'require.php';
+
+/**
+ * The CLI given commands
+ */
+define('ARGS', $argv);
+
+/**
+ * Create a project
+ * 
+ * @param string $name
+ * 
+ * @return string
+ */
+function create_project(string $name)
+{
+    # code...
+}
+
+/**
+ * Minimize a script
+ * 
+ * @param string $script
+ * 
+ * @return string
+ */
+function minimizeScript(string $script)
+{
+    # code...
+}
+
+/**
+ * Minimize a style
+ * 
+ * @param string $style
+ * 
+ * @return string
+ */
+function minimizeStyle(string $style)
+{
+    # code...
+}
+
+function get_arg(int $index, $default = null)
+{
+    return isset(ARGS[$index]) ? ARGS[$index] : $default;
+}
+
+function get_action()
+{
+    // Take into account the CLI call in the args
+    return get_arg(1);
+}
+
+$action = get_action();
+
+// TODO: parse into actions.php inside "cli" folder
+/**
+ * Rebuilds a single file
+ * 
+ * @param string $file The file to rebuild. If it's not given, it will try to get it from the args
+ * @param bool $absolute Will it be an absolute path? By default it will
+ * 
+ * @return bool
+ */
+function rebuild(string $file, bool $absolute = true)
+{
+    // If the file was not given, it get it from the args
+    if (is_null($file)) $file = get_arg(2);
+    // If it's an empty name, returns false
+    if (empty($file)) return false;
+
+    // Paths starts at public/ 
+    $new_file_path = $file;
+    $content = '';
+
+    $success = file_put_contents($new_file_path, $content) !== false;
+
+    return $success;
+}
+
+/**
+ * Builds all the files into minimized .html
+ * 
+ * @return bool
+ */
+function build()
+{
+    $files = [];
+
+    // TODO: get files
+    $files = glob( path_join(PUBLIC_DIR, '*.html') );
+    // TODO: implementar dd(); y logs ya de paso?
+    var_dump($files);
+
+    if (!file_exists(BUILD_DIR)) mkdir(BUILD_DIR);
+
+    $success = true;
+    foreach ($files as $file) $success &= rebuild($file);
+
+    return $success;
+}
+
+if (function_exists($action)) $action();
