@@ -24,4 +24,6 @@ function dd()
     echo "<pre style='font-size: 16px; color: hsl(0, 50, 20);'>";
     foreach ($args as $arg) var_dump($arg);
     echo "</pre>";
+
+    die;    
 }
