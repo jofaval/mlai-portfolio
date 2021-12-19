@@ -27,3 +27,5 @@ README.md
 require.php
 TODO
 utils.php
+frontend/*
+min/*
