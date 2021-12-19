@@ -5,6 +5,7 @@ All the log of changes on the project/repository
 ### Added
 - StackOverflow story social link
 - dd() for debugging
+- Ignore build and config files
 
 ### Modified
 - Improved README.md
