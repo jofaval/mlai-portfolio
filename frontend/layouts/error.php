@@ -4,14 +4,11 @@
 if (!isset($content)) $content = 'TODO: implement';
 if (!isset($props['styles'])) $props['styles'] = [];
 $props['styles'][] = $parent_call;
-$props['styles'][] = 'counters';
 
 ob_start(); ?>
 
 <?= c('page/header'); ?>
-<main id="main">
     <?= $content; ?>
-</main>
 <?= c('page/footer'); ?>
 
 <?php $content = ob_get_clean(); ?>
