@@ -1,5 +1,6 @@
-<?php $cover_img = 'https://jofaval.com/wp-content/uploads/2021/06/jofaval.jpg' ?>
+<?php $cover_img = path_join(IMG_DIR, 'jofaval.jpg') ?>
 <?php $dimensions = getimagesize($cover_img) ?>
+<?php $cover_img = get_public_url($cover_img) ?>
 
 <!-- TODO: implement constants file -->
 <?php if (!defined('LOCALE')) define('LOCALE', 'es_ES'); ?>

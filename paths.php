@@ -23,6 +23,13 @@ define('BUILD_DIR', path_join(BASE_DIR, 'build'));
 define('PUBLIC_DIR', path_join(BASE_DIR, 'public'));
 
 /**
+ * The img directory
+ * 
+ * @var string
+ */
+define('IMG_DIR', path_join(PUBLIC_DIR, 'img'));
+
+/**
  * The frontend directory
  * 
  * @var string
