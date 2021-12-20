@@ -4,6 +4,7 @@ All the log of changes on the project/repository
 ## 2021-12-20
 ### Added
 - HTML SEO description
+- Style and scripts asset props
 
 ## 2021-12-19
 ### Added
