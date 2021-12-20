@@ -7,6 +7,7 @@ All the log of changes on the project/repository
 - Style and scripts asset props
 - Error layout
 - Contact link in footer
+- Created `get_public_url` for resources
 
 ### Modified
 - `styles` and `scripts` now load from the head "dinamically"

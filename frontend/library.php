@@ -37,3 +37,20 @@ function c(string $component_name, array $props = null, string $root = COMPONENT
     // Return it
     return $content;
 }
+
+/**
+ * Gets the public url from a public resource for external access
+ * 
+ * @param string $path The asset path to process
+ * 
+ * @return string
+ */
+function get_public_url(string $path)
+{
+    // Replace path with the public domain
+    $path = str_replace(PUBLIC_DIR, 'https://mlai.jofaval.com', $path);
+    // Replace the path separator
+    $path = str_replace(DIRECTORY_SEPARATOR, '/', $path);
+
+    return $path;
+}
