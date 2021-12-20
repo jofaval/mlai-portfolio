@@ -8,6 +8,7 @@ All the log of changes on the project/repository
 - Error layout
 - Contact link in footer
 - Created `get_public_url` for resources
+- Color scheme, now it's not just a black and white page
 
 ### Modified
 - `styles` and `scripts` now load from the head "dinamically"

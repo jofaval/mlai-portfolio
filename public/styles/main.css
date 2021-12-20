@@ -3,11 +3,24 @@
     box-sizing: border-box;
 }
 
+:root
+{
+    --primary: hsl(216, 37%, 30%);
+    --primary-dark: hsl(217, 89%, 59%);
+}
+
 html,
 body
 {
     padding: 0;
     margin: 0;
+}
+
+body
+{
     font-family: 'Courier New', Courier, monospace;
     text-rendering: optimizeLegibility;
+    color: var(--primary);
+    filter: hue-rotate(40deg);
+    background-color: #fdffc8;
 }

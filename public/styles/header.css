@@ -1,7 +1,7 @@
 #header
 {
     width: 100%;
-    background: #000;
+    background: var(--primary-dark);
 
     color: white;
     overflow: hidden;
