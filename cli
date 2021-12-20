@@ -194,6 +194,8 @@ function get_files()
     // Remove files to ignore
     $files = array_filter($files, function(string $file)
     {
+        if (is_dir($file)) return false;
+
         foreach (IGNORE_FILES as $ignore) {
             if (str_contains($file, '*')) return !str_ends_with($file, $ignore);
 
