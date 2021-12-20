@@ -2,11 +2,11 @@
 <?php $dimensions = getimagesize($cover_img) ?>
 
 <!-- TODO: implement constants file -->
-<?php define('LOCALE', 'es_ES'); ?>
-<?php define('APP_TITLE', 'Pepe Fabra Valverde - M.L. & A.I. Portfolio'); ?>
-<?php define('APP_DESC', 'My portfolio about Machine Learning and Artificial Intelligence'); ?>
-<?php define('APP_URL', 'https://mlai.jofaval.com'); ?>
-<?php define('AUTHOR', 'jofaval'); ?>
+<?php if (!defined('LOCALE')) define('LOCALE', 'es_ES'); ?>
+<?php if (!defined('APP_TITLE')) define('APP_TITLE', 'Pepe Fabra Valverde - M.L. & A.I. Portfolio'); ?>
+<?php if (!defined('APP_DESC')) define('APP_DESC', 'My portfolio about Machine Learning and Artificial Intelligence'); ?>
+<?php if (!defined('APP_URL')) define('APP_URL', 'https://mlai.jofaval.com'); ?>
+<?php if (!defined('AUTHOR')) define('AUTHOR', 'jofaval'); ?>
 
 <!-- OpenGraph/Facebook -->
 <meta property="og:image"        content="<?= $cover_img ?>">

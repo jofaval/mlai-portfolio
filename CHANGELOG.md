@@ -12,6 +12,7 @@ All the log of changes on the project/repository
 
 ### Fixed
 - `build.bat` incorrect call, used to be `rebuild`
+- Prevent constant redifining
 
 ## 2021-12-19
 ### Added
