@@ -1,3 +1,8 @@
+# Remove the need for .html on links, it will be implied of not directly stated
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^.]+)$ $1.html [NC,L]
+
 # Force HTTPS usage
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteCond %{HTTPS} off
