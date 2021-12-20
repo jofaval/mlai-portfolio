@@ -2,6 +2,8 @@
 
 // Implement default content
 if (!isset($content)) $content = 'TODO: implement';
+if (!isset($props['styles'])) $props['styles'] = [];
+$props['styles'][] = $parent_call;
 
 ob_start(); ?>
 

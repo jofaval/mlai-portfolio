@@ -6,6 +6,9 @@ All the log of changes on the project/repository
 - HTML SEO description
 - Style and scripts asset props
 
+### Modified
+- styles and scripts now load from the head "dinamically"
+
 ### Fixed
 - build.bat incorrect call, used to be `rebuild`
 

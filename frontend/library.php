@@ -11,6 +11,10 @@
  */
 function c(string $component_name, array $props = null, string $root = COMPONENTS_DIR)
 {
+    // The file that call the component
+    $parent_call = debug_backtrace()[0]['file'];
+    $parent_call = basename($parent_call, '.php');
+
     // Add .php extension
     $component_name .= '.php';
 

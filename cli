@@ -75,6 +75,10 @@ function get_content(string $file)
     // DEPRECATED
     // $content = file_get_contents($file);
 
+    if (!file_exists($file) || !is_file($file)) {
+        return 'Not found';
+    }
+
     ob_start();
     require $file;
     $content = ob_get_clean();
@@ -91,7 +95,7 @@ function get_content(string $file)
  * 
  * @return bool
  */
-function rebuild(string $file, bool $absolute = true)
+function rebuild(string $file = null, bool $absolute = true)
 {
     // If the file was not given, it get it from the args
     if (is_null($file)) $file = get_arg(2);
@@ -120,7 +124,9 @@ function rebuild(string $file, bool $absolute = true)
  * @var string[]
  */
 define('IGNORE_FILES', [
-    
+    '.css',
+    '.js',
+    path_join('public', 'index.html'),
 ]);
 
 /**
@@ -183,9 +189,10 @@ function empty_dir(string $dir)
  */
 function build()
 {
-    $files = get_all_files();
     // TODO: implementar dd(); y logs ya de paso?
+    $files = get_all_files();
 
+    // TODO: create decorator for a real get_all_files?
     $files = array_filter($files, function(string $file)
     {
         foreach (IGNORE_FILES as $ignore) {
@@ -203,18 +210,21 @@ function build()
 
     $success = true;
     $total_files = count($files);
-    for ($file_index = 0; $file_index < $total_files; $file_index++) { 
-        $file = $files[$file_index];
-
+    $file_index = 0;
+    foreach ($files as $file) {
         $success &= rebuild($file);
         // As soon as it fails, stop it
         if (!$success) return;
 
+        $file_index++;
+
         // Calculate progress
-        $human_file_index = $file_index + 1;
+        $human_file_index = $file_index;
         $progress = ($human_file_index / $total_files) * 100;
         $progress = round($progress);
-        echo "A total of $progress% has been compiled, ($human_file_index/$total_files).\n";
+        $filename = str_replace(PUBLIC_DIR, '', $file);
+        $filename = str_replace('\\', '/', $filename);
+        echo "\"$filename\" has been compiled, A total of $progress% has been compiled, ($human_file_index/$total_files).\n";
     }
 
     return $success;
