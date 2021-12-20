@@ -1,5 +1,5 @@
 <?php if (!isset($title)) $title = 'Pepe Fabra Valverde - M.L. & A.I. Portfolio' ?>
-<?php $default_styles = [ 'main', 'header', 'footer', 'counters' ] ?>
+<?php $default_styles = [ 'main', 'header', 'footer' ] ?>
 
 <?php $styles = array_unique( array_merge($styles, $default_styles) ) ?>
 

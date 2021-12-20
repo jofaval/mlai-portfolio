@@ -5,12 +5,13 @@ All the log of changes on the project/repository
 ### Added
 - HTML SEO description
 - Style and scripts asset props
+- Error layout
 
 ### Modified
-- styles and scripts now load from the head "dinamically"
+- `styles` and `scripts` now load from the head "dinamically"
 
 ### Fixed
-- build.bat incorrect call, used to be `rebuild`
+- `build.bat` incorrect call, used to be `rebuild`
 
 ## 2021-12-19
 ### Added
