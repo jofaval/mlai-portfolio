@@ -1,1 +1,1 @@
-php cli rebuild
+php cli build
