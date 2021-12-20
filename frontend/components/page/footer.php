@@ -10,4 +10,9 @@
     <?php foreach ($footer_links as $link): ?>
         <?= c('navigation/link', $link); ?>
     <?php endforeach; ?>
+
+    <!-- TODO: create contact-link component -->
+    <div class="contact-link-container" style="float: right;">
+        <?= c('navigation/link', [ 'label' => 'Hire me!', 'href' => 'https://jofaval.com/mlai/contact', 'class' => 'contact-link' ]); ?>
+    </div>
 </footer>

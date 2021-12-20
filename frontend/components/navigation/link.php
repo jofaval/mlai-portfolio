@@ -1,4 +1,5 @@
 <?php if (!isset($href)) $href = '' ?>
 <?php if (!isset($label)) $label = '' ?>
+<?php if (!isset($class)) $class = '' ?>
 
-<a href="<?= $href ?>" class="link"><?= $label ?></a>
+<a href="<?= $href ?>" class="link <?= $class ?>"><?= $label ?></a>

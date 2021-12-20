@@ -6,6 +6,7 @@ All the log of changes on the project/repository
 - HTML SEO description
 - Style and scripts asset props
 - Error layout
+- Contact link in footer
 
 ### Modified
 - `styles` and `scripts` now load from the head "dinamically"
