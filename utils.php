@@ -65,7 +65,10 @@ function str_starts_with(string $haystack, string $needle)
  */
 function str_ends_with(string $haystack, string $needle)
 {
-    return strpos($haystack, $needle) === (strlen($haystack) - strlen($needle)) - 1;
+    $length = strlen($needle);
+    if(!$length) return true;
+
+    return substr($haystack, -$length) === $needle;
 }
 
 /**

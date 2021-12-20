@@ -13,6 +13,7 @@ All the log of changes on the project/repository
 ### Fixed
 - `build.bat` incorrect call, used to be `rebuild`
 - Prevent constant redifining
+- Incorrect `str_ends_with` implementation
 
 ## 2021-12-19
 ### Added
