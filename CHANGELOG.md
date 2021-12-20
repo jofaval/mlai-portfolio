@@ -19,6 +19,7 @@ All the log of changes on the project/repository
 - Prevent constant redifining
 - Incorrect `str_ends_with` implementation
 - It doesn't attempt to compile directories now
+- HTML `charset` must be in the first 1024 bytes
 
 ## 2021-12-19
 ### Added
