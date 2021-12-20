@@ -12,6 +12,9 @@
 
 <h3>Motivation</h3>
 
+<h3>Why you should hire me?</h3>
+<p>Idk :P</p>
+
 
 <!-- PROJECTS -->
 <h2>Projects</h2>
