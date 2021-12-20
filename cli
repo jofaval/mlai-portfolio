@@ -126,7 +126,7 @@ function rebuild(string $file = null, bool $absolute = true)
 define('IGNORE_FILES', [
     '.css',
     '.js',
-    path_join('public', 'index.html'),
+    // path_join('public', 'index.html'),
 ]);
 
 /**
@@ -183,6 +183,46 @@ function empty_dir(string $dir)
 }
 
 /**
+ * Returns all the files to compile
+ * 
+ * @return string[]
+ */
+function get_files()
+{
+    $files = get_all_files();
+
+    // Remove files to ignore
+    $files = array_filter($files, function(string $file)
+    {
+        foreach (IGNORE_FILES as $ignore) {
+            if (str_contains($file, '*')) return !str_ends_with($file, $ignore);
+
+            $ignore = str_replace('*', '', $ignore);
+            return !str_contains($file, $ignore);
+        }
+
+        return true;
+    });
+
+    // Replace .html with .php files if found
+    foreach ($files as $file_index => $file) {
+        // If it's an .html file, try to find a .php replacement
+        if (!str_ends_with($file, '.html')) continue;
+        $target_file = str_replace('.html', '.php', $file);
+
+        // Attempt to find a .php replacement, if found, remove the current index
+        foreach ($files as $possible_target) {
+            if ($possible_target != $target_file) continue;
+
+            unset($files[$file_index]);
+            break;
+        }
+    }
+
+    return $files;
+}
+
+/**
  * Builds all the files into minimized .html
  * 
  * @return bool
@@ -190,19 +230,7 @@ function empty_dir(string $dir)
 function build()
 {
     // TODO: implementar dd(); y logs ya de paso?
-    $files = get_all_files();
-
-    // TODO: create decorator for a real get_all_files?
-    $files = array_filter($files, function(string $file)
-    {
-        foreach (IGNORE_FILES as $ignore) {
-            $ignore = str_replace('*', '', $ignore);
-
-            if (str_ends_with($file, $ignore) || str_contains($file, $ignore)) return false;
-        }
-
-        return true;
-    });
+    $files = get_files();
 
     // Check if file exists, if it does, empty it, if it doesn't create it
     if (!file_exists(BUILD_DIR)) mkdir(BUILD_DIR);

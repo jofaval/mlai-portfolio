@@ -9,6 +9,8 @@ All the log of changes on the project/repository
 
 ### Modified
 - `styles` and `scripts` now load from the head "dinamically"
+- Implement `get_all_files` decorator
+- In `cli build` an `.html` file gets **overrided** by a `.php` one, if they share the same name
 
 ### Fixed
 - `build.bat` incorrect call, used to be `rebuild`
