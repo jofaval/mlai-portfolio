@@ -4,6 +4,7 @@ All the log of changes on the project/repository
 ## 2021-12-2021
 ### Added
 - Scrollbar color is now updated
+- Add `Content-Security Policy`. Extra layer of security
 
 ### Modified
 - Links now also have `aria-label` for screenreaders
