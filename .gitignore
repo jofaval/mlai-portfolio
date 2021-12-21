@@ -2,3 +2,4 @@ TODO
 *config*.*
 build/*
 production/deployments/*
+logs/*
