@@ -6,18 +6,8 @@
 <!-- TODO: fix styles not working nor rendering properly with this method -->
 <!-- TODO: Implement minify and array -->
 <style type="text/css">
-    <?php foreach ($styles as $style): ?>
-        <?php
-            // TODO: implement function
-            $full_path = path_join(PUBLIC_DIR, 'styles', "$style.css");
-
-            // TODO: detect if it has an http for a request
-
-            $content = '';
-            if (file_exists($full_path)) $content = file_get_contents($full_path);
-        ?>
-        <?= $content ?>
-    <?php endforeach; ?>
-
+    <?php build_styles($target, $styles) ?>
     /* TODO: implement save it in a separate file, and probably later minify it */
 </style>
+
+<link rel="stylesheet" href="<?= get_public_url("styles/$target.css") ?>">

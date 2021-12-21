@@ -2,6 +2,7 @@
 <?php if (!isset($content)) $content = 'TODO: implement'; ?>
 <?php if (!isset($styles)) $styles = []; ?>
 <?php if (!isset($scripts)) $scripts = []; ?>
+<?php if (!isset($target)) $target = $parent_call; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +10,6 @@
 <body>
     <?= $content ?>
 
-    <?= c('page/styles', [ 'styles' => $styles ]) ?>
+    <?= c('page/styles', [ 'styles' => $styles, 'target' => $target ]) ?>
 </body>
 </html>

@@ -11,10 +11,12 @@ All the log of changes on the project/repository
 - Create constants file for a better organization
 - Create logging system with log levels
 - Create minize base
+- Create asset `build_styles` for a unified, extracted piece of logic
 
 ### Modified
 - Links now also have `aria-label` for screenreaders
 - Move styles to it's own component
+- Now all layouts pass the `target`
 
 ## 2021-12-20
 ### Added

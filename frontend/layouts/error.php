@@ -13,4 +13,4 @@ ob_start(); ?>
 
 <?php $content = ob_get_clean(); ?>
 
-<?= c('base', array_merge($props, [ 'content' => $content ]), LAYOUTS_DIR); ?>
+<?= c('base', array_merge($props, [ 'content' => $content, 'target' => $parent_call ]), LAYOUTS_DIR); ?>
