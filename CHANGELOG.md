@@ -5,6 +5,9 @@ All the log of changes on the project/repository
 ### Added
 - Scrollbar color is now updated
 
+### Modified
+- Links now also have `aria-label` for screenreaders
+
 ## 2021-12-20
 ### Added
 - HTML SEO description
