@@ -49,3 +49,10 @@ define('COMPONENTS_DIR', path_join(FRONTEND_DIR, 'components'));
  * @var string
  */
 define('LAYOUTS_DIR', path_join(FRONTEND_DIR, 'layouts'));
+
+/**
+ * The libs directory
+ * 
+ * @var string
+ */
+define('LIBS_DIR', path_join(BASE_DIR, 'libs'));
