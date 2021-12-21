@@ -11,7 +11,7 @@
  */
 function write(string $file, string $content, int $flags = 0)
 {
-    if (!file_exists(dirname($file))) mkdir($file, PERMISSIONS, true);
+    if (!file_exists(dirname($file))) mkdir(dirname($file), PERMISSIONS, true);
     if (!file_exists($file)) touch($file);
 
     $success = file_put_contents($file, $content, $flags) !== false;

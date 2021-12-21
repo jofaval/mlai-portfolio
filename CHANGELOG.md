@@ -18,6 +18,9 @@ All the log of changes on the project/repository
 - Move styles to it's own component
 - Now all layouts pass the `target`
 
+### Fixed
+- `mkdir` on file `write` was creating the whole file path as a dir
+
 ## 2021-12-20
 ### Added
 - HTML SEO description
