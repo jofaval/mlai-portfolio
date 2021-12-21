@@ -48,7 +48,8 @@ function c(string $component_name, array $props = null, string $root = COMPONENT
 function get_public_url(string $path)
 {
     // Replace path with the public domain
-    $path = str_replace(PUBLIC_DIR, 'https://mlai.jofaval.com', $path);
+    if (str_starts_with($path, PUBLIC_DIR)) $path = str_replace(PUBLIC_DIR, APP_URL, $path);
+    else $path = path_join(APP_URL, $path);
     // Replace the path separator
     $path = str_replace(DIRECTORY_SEPARATOR, '/', $path);
 
