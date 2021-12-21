@@ -77,3 +77,31 @@ define('LOG_LEVEL_INFO', 4);
  * @var int
  */
 define('LOG_LEVEL', LOG_LEVEL_ALL);
+
+/**
+ * The default locale
+ * 
+ * @var string
+ */
+define('LOCALE', 'es_ES');
+
+/**
+ * The app title
+ * 
+ * @var string
+ */
+define('APP_TITLE', 'Pepe Fabra Valverde - M.L. & A.I. Portfolio');
+
+/**
+ * The app description
+ * 
+ * @var string
+ */
+define('APP_DESC', 'My portfolio about Machine Learning and Artificial Intelligence');
+
+/**
+ * The author (myself)
+ * 
+ * @var string
+ */
+define('AUTHOR', 'jofaval');

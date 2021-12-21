@@ -18,6 +18,7 @@ All the log of changes on the project/repository
 - Move styles to it's own component
 - Now all layouts pass the `target`
 - Use inline styling over CSP policy bypass (link -> style.css)
+- Move constants from `seo` to `constants.php`
 
 ### Fixed
 - `mkdir` on file `write` was creating the whole file path as a dir
