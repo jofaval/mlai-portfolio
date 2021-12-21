@@ -22,6 +22,7 @@ All the log of changes on the project/repository
 
 ### Fixed
 - `mkdir` on file `write` was creating the whole file path as a dir
+- Styling not working, `Content-Secure Policy` inline `self` block
 
 ## 2021-12-20
 ### Added
