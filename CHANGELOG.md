@@ -5,6 +5,7 @@ All the log of changes on the project/repository
 ### Added
 - Scrollbar color is now updated
 - Add `Content-Security Policy`. Extra layer of security
+- Implement `deploy` in the `cli`
 
 ### Modified
 - Links now also have `aria-label` for screenreaders

@@ -238,6 +238,8 @@ function build()
     if (!file_exists(BUILD_DIR)) mkdir(BUILD_DIR);
     else empty_dir(BUILD_DIR);
 
+    // TODO: implement threading here?
+
     $success = true;
     $total_files = count($files);
     $file_index = 0;
@@ -258,6 +260,19 @@ function build()
     }
 
     return $success;
+}
+
+// TODO: implement upload from cli
+function deploy()
+{
+    $python_lib = 'python';
+    $deploy_py_path = 'production/upload.py';
+
+    // Execute the command
+    exec("$python_lib $deploy_py_path", $output);
+
+    // Print response
+    foreach ($output as $line) echo "$line\n";
 }
 
 if (function_exists($action)) $action();
