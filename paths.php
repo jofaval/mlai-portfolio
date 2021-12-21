@@ -63,3 +63,10 @@ define('CONFIG_DIR', path_join(BASE_DIR, 'config'));
  * @var string
  */
 define('LIBS_DIR', path_join(BASE_DIR, 'libs'));
+
+/**
+ * The log file
+ * 
+ * @var string
+ */
+define('LOG_FILE', path_join(BASE_DIR, 'logs', 'log.txt'));

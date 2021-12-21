@@ -9,6 +9,7 @@ All the log of changes on the project/repository
 - File libs
   - `write` and `read`
 - Create constants file for a better organization
+- Create logging system with log levels
 
 ### Modified
 - Links now also have `aria-label` for screenreaders
