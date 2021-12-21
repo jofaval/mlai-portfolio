@@ -9,6 +9,7 @@ All the log of changes on the project/repository
 
 ### Modified
 - Links now also have `aria-label` for screenreaders
+- Move styles to it's own component
 
 ## 2021-12-20
 ### Added

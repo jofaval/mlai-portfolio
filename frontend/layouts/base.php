@@ -8,5 +8,7 @@
 <?= c('page/head', [ 'title' => $title, 'styles' => $styles, 'scripts' => $scripts ]) ?>
 <body>
     <?= $content ?>
+
+    <?= c('page/styles', [ 'styles' => $styles ]) ?>
 </body>
 </html>
