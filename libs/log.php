@@ -7,7 +7,7 @@
  */
 function get_time()
 {
-    return date('[d/m/Y H:i:s]');
+    return date('[d/m/Y H:i:s]', time());
 }
 
 /**
@@ -31,7 +31,7 @@ function logging(string $message = null, int $log_level = LOG_LEVEL_ALL)
     $message = get_time() . " " . $message;
 
     // Write the content
-    $success = write(LOG_FILE, $message);
+    $success = write(LOG_FILE, $message, FILE_APPEND);
 
     return $success;
 }

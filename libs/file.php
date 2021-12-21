@@ -3,17 +3,18 @@
 /**
  * Writes the content in a file, and creates the directories and file if doesn't exist yet
  * 
- * @param string $file
- * @param string $content
+ * @param string $file The file path
+ * @param string $content The content
+ * @param int $flags The flags to use
  * 
  * @return bool
  */
-function write(string $file, string $content)
+function write(string $file, string $content, int $flags = 0)
 {
     if (!file_exists(dirname($file))) mkdir($file, PERMISSIONS, true);
     if (!file_exists($file)) touch($file);
 
-    $success = file_put_contents($file, $content) !== false;
+    $success = file_put_contents($file, $content, $flags) !== false;
 
     return $success;
 }
@@ -21,7 +22,7 @@ function write(string $file, string $content)
 /**
  * Reads the content of a file, if it exists
  * 
- * @param string $file The file to read
+ * @param string $file The file path
  * 
  * @return string
  */
