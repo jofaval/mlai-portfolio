@@ -1,6 +1,10 @@
 # CHANGELOG #
 All the log of changes on the project/repository
 
+## 2021-12-2021
+### Added
+- Scrollbar color is now updated
+
 ## 2021-12-20
 ### Added
 - HTML SEO description

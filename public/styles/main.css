@@ -16,6 +16,12 @@ body
     margin: 0;
 }
 
+html
+{
+	scrollbar-color: var(--primary) transparent;
+	scrollbar-width: thin;
+}
+
 body
 {
     font-family: 'Courier New', Courier, monospace;
@@ -23,4 +29,18 @@ body
     color: var(--primary);
     filter: hue-rotate(40deg);
     background-color: #fdffc8;
+}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 8px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--primary);
 }
