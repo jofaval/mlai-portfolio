@@ -16,6 +16,13 @@ define('BASE_DIR', __DIR__);
 define('BUILD_DIR', path_join(BASE_DIR, 'build'));
 
 /**
+ * The builder directory
+ * 
+ * @var string
+ */
+define('BUILDER_DIR', path_join(BASE_DIR, 'builder'));
+
+/**
  * The public directory
  * 
  * @var string

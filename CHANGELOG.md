@@ -10,6 +10,7 @@ All the log of changes on the project/repository
   - `write` and `read`
 - Create constants file for a better organization
 - Create logging system with log levels
+- Create minize base
 
 ### Modified
 - Links now also have `aria-label` for screenreaders
