@@ -8,6 +8,7 @@ All the log of changes on the project/repository
 - Implement `deploy` in the `cli`
 - File libs
   - `write` and `read`
+- Create constants file for a better organization
 
 ### Modified
 - Links now also have `aria-label` for screenreaders

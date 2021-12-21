@@ -51,6 +51,13 @@ define('COMPONENTS_DIR', path_join(FRONTEND_DIR, 'components'));
 define('LAYOUTS_DIR', path_join(FRONTEND_DIR, 'layouts'));
 
 /**
+ * The config directory
+ * 
+ * @var string
+ */
+define('CONFIG_DIR', path_join(BASE_DIR, 'config'));
+
+/**
  * The libs directory
  * 
  * @var string
