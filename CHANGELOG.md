@@ -17,6 +17,7 @@ All the log of changes on the project/repository
 - Links now also have `aria-label` for screenreaders
 - Move styles to it's own component
 - Now all layouts pass the `target`
+- Use inline styling over CSP policy bypass (link -> style.css)
 
 ### Fixed
 - `mkdir` on file `write` was creating the whole file path as a dir
