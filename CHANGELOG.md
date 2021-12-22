@@ -21,6 +21,7 @@ All the log of changes on the project/repository
 ### Fixed
 - Attempting to minify images with HTML minification
 - Correctly log errors on th exception_handler
+- `.htaccess` custom error documents, using a `./` instead of a `/` and a `.htaccess` not fully updated on production
 
 ## 2021-12-21
 ### Added
