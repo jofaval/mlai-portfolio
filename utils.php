@@ -28,6 +28,7 @@ function dd()
     die;
 }
 
+// TOOD: create debug separete file?
 /**
  * Catches and handles an exception/error throwed in the app
  * 
@@ -37,10 +38,33 @@ function dd()
  */
 function general_exception_handler(Throwable $throwed)
 {
+    // Log the error
+    logging($throwed->__toString());
+
     dd($throwed);
 }
 
 set_exception_handler('general_exception_handler');
+
+/**
+ * Catches and handlers an error throwed in the app
+ * 
+ * @param int $errno The error code
+ * @param string $errstr The message it throwed
+ * @param string $errfile The file where it happend
+ * @param int $errline The line of the file where it happened
+ * 
+ * @return void
+ */
+function general_error_handler(int $errno, string $errstr, string $errfile, int $errline): void
+{
+    $message = "An error [code:$errno] with message \"$errstr\" at '$errfile:$errline'";
+    logging($message);
+
+    dd($message);
+}
+
+set_error_handler('general_error_handler');
 
 /**
  * Determins if a $needle is at the start of the $haystack
