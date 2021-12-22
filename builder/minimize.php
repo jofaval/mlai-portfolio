@@ -1,6 +1,21 @@
 <?php
 
 /**
+ * Preprocesses the text before actually minifying it
+ * 
+ * @param string $content The content to preprocess
+ * 
+ * @return string
+ */
+function minify_pre(string $content)
+{
+    $content = preg_replace('/\/\*.+\*\//', ' ', $content);
+    $content = preg_replace('/\s+/', ' ', $content);
+
+    return $content;
+}
+
+/**
  * Minifies a CSS file
  * 
  * @param string $file The file to minify
@@ -12,7 +27,7 @@ function minify_css(string $file)
     $minified = $file;
 
     // Retrieve the content of the file
-    $minified = read($file);
+    $minified = minify_pre( read($file) );
 
     return $minified;
 }
@@ -29,7 +44,7 @@ function minify_js(string $file)
     $minified = $file;
 
     // Retrieve the content of the file
-    $minified = read($file);
+    $minified = minify_pre( read($file) );
 
     return $minified;
 }

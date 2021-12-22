@@ -21,6 +21,7 @@ All the log of changes on the project/repository
 - Now all layouts pass the `target`
 - Use inline styling over CSP policy bypass (link -> style.css)
 - Move constants from `seo` to `constants.php`
+- Implement `minify_pre` for preprocessing
 
 ### Fixed
 - `mkdir` on file `write` was creating the whole file path as a dir
