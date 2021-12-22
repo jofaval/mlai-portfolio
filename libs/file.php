@@ -35,3 +35,15 @@ function read(string $file)
 
     return $content;
 }
+
+/**
+ * Gets the extension from a file
+ * 
+ * @param string $file The file from which to get the extension
+ * 
+ * @return string
+ */
+function get_file_extension(string $file)
+{
+    return pathinfo($file, PATHINFO_EXTENSION);
+}

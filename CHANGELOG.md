@@ -10,6 +10,7 @@ All the log of changes on the project/repository
 - Added "Link to" to `aria-label` in links for a more cohesive screen-reading
 - `#page-title` is not an `<h1>` and each page can have it's own `<h1>`
 - Extract `hire-me` component from contact link in footer
+- Extract `get_file_extension`
 
 ### Fixed
 - Attempting to minify images with HTML minification
