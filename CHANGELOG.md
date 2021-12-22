@@ -7,6 +7,7 @@ All the log of changes on the project/repository
 - Each `cli build` will get logged
 - Add `replace_extension` for an easier replacement
 - Implement error handler (as an extra on top of the exception_handler)
+- Implement display option on error handlers
 
 ### Modified
 - Added "Link to" to `aria-label` in links for a more cohesive screen-reading

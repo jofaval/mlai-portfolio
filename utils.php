@@ -33,15 +33,16 @@ function dd()
  * Catches and handles an exception/error throwed in the app
  * 
  * @param Throwable $throwed The exception/error throwed in the app
+ * @param bool $display Determines wether it should display the details, it won't by default
  * 
  * @return void
  */
-function general_exception_handler(Throwable $throwed)
+function general_exception_handler(Throwable $throwed, bool $display = false)
 {
     // Log the error
     logging($throwed->__toString());
 
-    dd($throwed);
+    if ($display) dd($throwed);
 }
 
 set_exception_handler('general_exception_handler');
@@ -53,15 +54,16 @@ set_exception_handler('general_exception_handler');
  * @param string $errstr The message it throwed
  * @param string $errfile The file where it happend
  * @param int $errline The line of the file where it happened
+ * @param bool $display Determines wether it should display the details, it won't by default
  * 
  * @return void
  */
-function general_error_handler(int $errno, string $errstr, string $errfile, int $errline): void
+function general_error_handler(int $errno, string $errstr, string $errfile, int $errline, bool $display = false): void
 {
     $message = "An error [code:$errno] with message \"$errstr\" at '$errfile:$errline'";
     logging($message);
 
-    dd($message);
+    if ($display) dd($message);
 }
 
 set_error_handler('general_error_handler');
