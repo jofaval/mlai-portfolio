@@ -12,3 +12,4 @@ require_once path_join(BUILDER_DIR, 'build.php');
 
 // Set global locale
 setlocale(LC_ALL, LOCALE);
+date_default_timezone_set('Europe/Madrid');
