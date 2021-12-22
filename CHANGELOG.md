@@ -11,6 +11,9 @@ All the log of changes on the project/repository
 - `#page-title` is not an `<h1>` and each page can have it's own `<h1>`
 - Extract `hire-me` component from contact link in footer
 
+### Fixed
+- Attempting to minify images with HTML minification
+
 ## 2021-12-21
 ### Added
 - Scrollbar color is now updated

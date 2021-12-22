@@ -20,7 +20,8 @@ function get_content(string $file)
     require $file;
     $content = ob_get_clean();
 
-    $content = minify_html($content);
+    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+    if (in_array($extension, [ 'html', 'php' ])) $content = minify_html($content);
 
     return $content;
 }
