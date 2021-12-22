@@ -64,8 +64,7 @@
         <td><?= c('navigation/link', [ 'label' => 'My StackOverflow', 'href' => 'https://stackoverflow.com/story/jofaval' ]) ?></td>
     </tr>
 </table>
-<p></p>
-
+<p>&nbsp;</p>
 
 <?php
 
