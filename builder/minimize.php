@@ -64,6 +64,21 @@ function minify_js(string $file)
 }
 
 /**
+ * Minifies an image
+ * 
+ * @param string $file The file to minify
+ * 
+ * @return string
+ */
+function minify_img(string $file)
+{
+    // magick convert -strip -interlace Plane -gaussian-blur 0.05 -quality 60% "$file" "$file"
+    $file = compress_to_webp($file);
+
+    return $file;
+}
+
+/**
  * Minifies a file
  * 
  * @param string $file The file to minify

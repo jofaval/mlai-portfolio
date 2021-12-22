@@ -14,6 +14,7 @@ All the log of changes on the project/repository
 - Create contact section on the home page
 - Create img lib with Imagick external library
 - Prepare `sidebar` links generation in an `<aside>`
+- Create `minify_img` using the `Imagick` wepb compression
 
 ### Modified
 - Added "Link to" to `aria-label` in links for a more cohesive screen-reading
