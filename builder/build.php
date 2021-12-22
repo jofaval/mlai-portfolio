@@ -195,5 +195,7 @@ function build()
         echo "\"$filename\" has been compiled, A total of $progress% has been compiled, ($human_file_index/$total_files).\n";
     }
 
+    logging('built');
+
     return $success;
 }

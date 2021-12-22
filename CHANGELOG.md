@@ -4,6 +4,7 @@ All the log of changes on the project/repository
 ## 2021-12-22
 ### Added
 - Added `no-counter` now some headers won't be counted
+- Each `cli build` will get logged
 
 ### Modified
 - Added "Link to" to `aria-label` in links for a more cohesive screen-reading
