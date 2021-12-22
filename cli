@@ -99,14 +99,10 @@ function rebuild(string $file = null, bool $absolute = true)
     $new_file_path = str_replace(PUBLIC_DIR, BUILD_DIR, $file);
     $content = get_content($file);
     
-    $new_dir = dirname($new_file_path);
-    // Create the new folder architecture if doesn't exist yet
-    if (!file_exists($new_dir)) mkdir($new_dir, PERMISSIONS, true);
-    
     // If it's a php file, replace it to html
     $new_file_path = str_replace('.php', '.html', $new_file_path);
     // Input the hew content
-    $success = file_put_contents($new_file_path, $content) !== false;
+    $success = write($new_file_path, $content) !== false;
 
     return $success;
 }
