@@ -11,6 +11,11 @@ Using a bit of background as a Web Developer I created my website from scratch a
 #### Why MLAI?
 It comes from **M**achine **L**earning and **A**rtificial **I**ntelligence. It's a nice acronym and it wouldn't be mistaken so easily with other variations, since `aiml` for example, is already used in computing science for `AIML` (**A**rtificial **I**ntelligence **M**ark-up **L**anguage)
 
+### Uses
+- Self-built "pseudo-compiler" for blazing fast loads and easy page design
+- Minify external library
+- ImageMagick library
+
 ## Experience
 
 All my experience

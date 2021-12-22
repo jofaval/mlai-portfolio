@@ -15,6 +15,7 @@ All the log of changes on the project/repository
 - Create img lib with Imagick external library
 - Prepare `sidebar` links generation in an `<aside>`
 - Create `minify_img` using the `Imagick` wepb compression
+- Specify libraries and tech-stack base of the proejct in the README.md
 
 ### Modified
 - Added "Link to" to `aria-label` in links for a more cohesive screen-reading
