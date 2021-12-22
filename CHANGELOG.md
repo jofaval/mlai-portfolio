@@ -12,6 +12,7 @@ All the log of changes on the project/repository
 - Create `<img>` component
   - With `aria-label` and `<figure>` toggle
 - Create contact section on the home page
+- Prepare `sidebar` links generation in an `<aside>`
 
 ### Modified
 - Added "Link to" to `aria-label` in links for a more cohesive screen-reading
