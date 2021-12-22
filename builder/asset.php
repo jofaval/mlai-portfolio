@@ -54,7 +54,8 @@ function build_styles(string $target, array $styles = [])
     $success = write($target, $content);
 
     // Minify the content
-    minify($target);
+    $minified = minify($target);
+    $success &= write($target, $minified);
 
     return $success;
 }
