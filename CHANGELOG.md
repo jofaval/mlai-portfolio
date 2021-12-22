@@ -12,6 +12,7 @@ All the log of changes on the project/repository
 - Create `<img>` component
   - With `aria-label` and `<figure>` toggle
 - Create contact section on the home page
+- Create img lib with Imagick external library
 - Prepare `sidebar` links generation in an `<aside>`
 
 ### Modified
