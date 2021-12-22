@@ -19,30 +19,6 @@ function create_project(string $name)
     # code...
 }
 
-/**
- * Minimize a script
- * 
- * @param string $script
- * 
- * @return string
- */
-function minimizeScript(string $script)
-{
-    # code...
-}
-
-/**
- * Minimize a style
- * 
- * @param string $style
- * 
- * @return string
- */
-function minimizeStyle(string $style)
-{
-    # code...
-}
-
 function get_arg(int $index, $default = null)
 {
     return isset(ARGS[$index]) ? ARGS[$index] : $default;
