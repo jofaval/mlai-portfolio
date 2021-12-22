@@ -3,62 +3,62 @@ body
     counter-reset: h1 h2;
 }
 
-h1
+h1:not(.no-counter)
 {
     counter-reset: h2;
 }
 
-h1::before
+h1:not(.no-counter)::before
 {
     counter-increment: h1;
     /* content: counter(h1) ". "; */
 }
 
-h2
+h2:not(.no-counter)
 {
     counter-reset: h3;
 }
 
-h2::before
+h2:not(.no-counter)::before
 {
     counter-increment: h2;
     content: counter(h2) ". ";
 }
 
-h3
+h3:not(.no-counter)
 {
     counter-reset: h4;
 }
 
-h3::before
+h3:not(.no-counter)::before
 {
     counter-increment: h3;
     content: counter(h2) "." counter(h3) ". ";
 }
 
-h4
+h4:not(.no-counter)
 {
     counter-reset: h5;
 }
 
-h4::before
+h4:not(.no-counter)::before
 {
     counter-increment: h4;
     content: counter(h2) "." counter(h3) "." counter(h4) ". ";
 }
 
-h5
+h5:not(.no-counter)
 {
     counter-reset: h6;
 }
 
-h5::before
+h5:not(.no-counter)::before
 {
     counter-increment: h5;
     content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". ";
 }
 
-h6::before
+h6:not(.no-counter)::before
 {
     counter-increment: h6;
     content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". ";

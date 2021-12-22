@@ -1,4 +1,4 @@
 <header id="header">
-    <h1 id="page-title">Pepe Fabra Valverde</h1>
+    <p id="page-title">Pepe Fabra Valverde</p>
     <span id="page-description">Machine Learning & A.I.</span>
 </header>

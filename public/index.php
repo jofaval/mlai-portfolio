@@ -3,6 +3,9 @@
 <!-- For testing purpose -->
 <!-- (h2.title{Section Title}+p{lorem*5}+h3{Section Subtitle}*3+p{lorem*5}+h4{Subsection title}*4+p{lorem*5}+h5{Subsection subtitle}*3+p{lorem*5}+h6{Subsection Detail}*5+p{lorem*5})*3 -->
 
+<h1 style="text-align-last: center;">Pepe Fabra Valverde</h1>
+<h2 class="no-counter" style="text-align-last: center;">Machine Learning & Artificial Intelligence student</h2>
+
 <!-- PORTFOLIO INTRODUCTION -->
 <h2>Portfolio</h2>
 

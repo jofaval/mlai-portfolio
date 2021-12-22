@@ -2,8 +2,12 @@
 All the log of changes on the project/repository
 
 ## 2021-12-22
+### Added
+- Added `no-counter`
+
 ### Modified
 - Added "Link to" to `aria-label` in links for a more cohesive screen-reading
+- `#page-title` is not an `<h1>` and each page can have it's own `<h1>`
 
 ## 2021-12-21
 ### Added
