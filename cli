@@ -62,8 +62,6 @@ function deploy()
     $python_lib = 'python';
     $deploy_py_path = 'production/upload.py';
 
-    logging('deployed');
-
     // TODO: implement build here and not on upload, upload should only move the files
     // not handle the building process
 
@@ -72,6 +70,8 @@ function deploy()
 
     // Print response
     foreach ($output as $line) echo "$line\n";
+
+    logging('deployed');
 }
 
 if (function_exists($action)) $action();
