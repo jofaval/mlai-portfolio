@@ -12,6 +12,7 @@ All the log of changes on the project/repository
 - Create logging system with log levels
 - Create minize base
 - Create asset `build_styles` for a unified, extracted piece of logic
+- Configure `locale`
 
 ### Modified
 - Links now also have `aria-label` for screenreaders
