@@ -19,6 +19,7 @@ All the log of changes on the project/repository
 - Extract `hire-me` component from contact link in footer
 - Extract `get_file_extension`
 - `cli deploy` now also builds, instead of building on the upload deploy
+- Extracted debugging and handlers utilities to `libs/debug.php`
 
 ### Fixed
 - Attempting to minify images with HTML minification
