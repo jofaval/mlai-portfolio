@@ -5,6 +5,7 @@ All the log of changes on the project/repository
 ### Added
 - Added `no-counter` now some headers won't be counted
 - Each `cli build` will get logged
+- Add `replace_extension` for an easier replacement
 
 ### Modified
 - Added "Link to" to `aria-label` in links for a more cohesive screen-reading

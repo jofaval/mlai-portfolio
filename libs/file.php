@@ -47,3 +47,22 @@ function get_file_extension(string $file)
 {
     return pathinfo($file, PATHINFO_EXTENSION);
 }
+
+/**
+ * Replaces the extension of a file
+ * 
+ * @param string $filename The filename with the old extension
+ * @param string $new_extension The new extension to replace
+ * 
+ * @return string
+ * 
+ * @author Alex (https://stackoverflow.com/users/288568/alex)
+ * @source https://stackoverflow.com/questions/193794/how-can-i-change-a-files-extension-using-php#answer-14726079
+ */
+function replace_extension($filename, $new_extension) {
+    $info = pathinfo($filename);
+    return ($info['dirname'] ? $info['dirname'] . DIRECTORY_SEPARATOR : '') 
+        . $info['filename'] 
+        . '.' 
+        . $new_extension;
+}
