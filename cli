@@ -8,13 +8,6 @@ require_once 'require.php';
 define('ARGS', $argv);
 
 /**
- * The default chmod permissions
- * 
- * @var int
- */
-define('PERMISSIONS', 0755);
-
-/**
  * Create a project
  * 
  * @param string $name
