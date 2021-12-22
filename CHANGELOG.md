@@ -83,6 +83,8 @@ All the log of changes on the project/repository
 - Implement global exception handler
 - Create CHANGELOG wiki page
 - Add favicon
+- Dummy `projects/test.html` for nesting testing on the `cli build`
+- Dummy `index.php` root home
 
 ### Modified
 - Improved README.md
