@@ -264,7 +264,7 @@ def build() -> None:
 def main() -> None:
     start = time.time()
 
-    build()
+    # build()
     preparezip()
     connect(upload)
     deploy()

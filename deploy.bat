@@ -1,4 +1,5 @@
 REM Execute the production deployment script
-python production/upload.py
+REM python production/upload.py
+php cli deploy
 
 REM pause

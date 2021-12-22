@@ -12,6 +12,7 @@ All the log of changes on the project/repository
 - `#page-title` is not an `<h1>` and each page can have it's own `<h1>`
 - Extract `hire-me` component from contact link in footer
 - Extract `get_file_extension`
+- `cli deploy` now also builds, instead of building on the upload deploy
 
 ### Fixed
 - Attempting to minify images with HTML minification
