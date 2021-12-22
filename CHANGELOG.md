@@ -1,6 +1,10 @@
 # CHANGELOG #
 All the log of changes on the project/repository
 
+## 2021-12-22
+### Modified
+- Added "Link to" to `aria-label` in links for a more cohesive screen-reading
+
 ## 2021-12-21
 ### Added
 - Scrollbar color is now updated
