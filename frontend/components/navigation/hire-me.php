@@ -1,0 +1,1 @@
+<?= c('navigation/link', [ 'label' => 'Hire me!', 'href' => 'https://jofaval.com/mlai/contact', 'class' => 'contact-link' ]); ?>

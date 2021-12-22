@@ -13,6 +13,6 @@
 
     <!-- TODO: create contact-link component -->
     <div class="contact-link-container" style="float: right;">
-        <?= c('navigation/link', [ 'label' => 'Hire me!', 'href' => 'https://jofaval.com/mlai/contact', 'class' => 'contact-link' ]); ?>
+        <?= c('navigation/hire-me'); ?>
     </div>
 </footer>
