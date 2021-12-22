@@ -33,6 +33,20 @@ function minify_css(string $file)
 }
 
 /**
+ * Minify HTML content
+ * 
+ * @param string $content The HTML content to minify
+ * 
+ * @return string
+ */
+function minify_html(string $content)
+{
+    $content = minify_pre($content);
+
+    return $content;
+}
+
+/**
  * Minifies a JS file
  * 
  * @param string $file The file to minify

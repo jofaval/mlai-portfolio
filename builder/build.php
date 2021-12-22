@@ -20,6 +20,8 @@ function get_content(string $file)
     require $file;
     $content = ob_get_clean();
 
+    $content = minify_html($content);
+
     return $content;
 }
 

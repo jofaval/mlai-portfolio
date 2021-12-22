@@ -14,6 +14,7 @@ All the log of changes on the project/repository
 - Create asset `build_styles` for a unified, extracted piece of logic
 - Configure `locale`
 - Create `build.php` to container all the building logic from `cli build`
+- Implement a `minify_html` in `rebuild`
 
 ### Modified
 - Links now also have `aria-label` for screenreaders
