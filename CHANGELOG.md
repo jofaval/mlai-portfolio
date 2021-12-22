@@ -8,6 +8,7 @@ All the log of changes on the project/repository
 - Add `replace_extension` for an easier replacement
 - Implement error handler (as an extra on top of the exception_handler)
 - Implement display option on error handlers
+- `.original` elements for an untouched color
 
 ### Modified
 - Added "Link to" to `aria-label` in links for a more cohesive screen-reading
