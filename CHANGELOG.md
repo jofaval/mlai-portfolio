@@ -27,6 +27,7 @@ All the log of changes on the project/repository
 ### Fixed
 - `mkdir` on file `write` was creating the whole file path as a dir
 - Styling not working, `Content-Secure Policy` inline `self` block
+- Sanitize `label` before inputing it in `aria-label` so that it only reads text
 
 ## 2021-12-20
 ### Added
