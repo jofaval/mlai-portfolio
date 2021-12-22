@@ -10,6 +10,7 @@ All the log of changes on the project/repository
 - Implement display option on error handlers
 - `.original` elements for an untouched color
 - Create `<img>` component
+- Create contact section on the home page
 
 ### Modified
 - Added "Link to" to `aria-label` in links for a more cohesive screen-reading

@@ -1,0 +1,14 @@
+.contact-table
+{
+    margin: auto;
+}
+
+.contact-table tbody tr td:nth-child(1)
+{
+    text-align-last: right;
+}
+
+.contact-table tbody tr td:nth-child(2)
+{
+    text-align-last: left;
+}
