@@ -23,6 +23,7 @@ All the log of changes on the project/repository
 - Center main entry title and subtitle in a separate file
 - Visually redesign, and implement a kind of "glassmorphism"
 - Extract `get_sidebar_links` to `library`
+- `hire-me` label is now customizable
 
 ### Fixed
 - `get_public_url` didn't work for `build` or `img` paths

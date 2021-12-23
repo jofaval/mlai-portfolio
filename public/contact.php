@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 <h1>Contact page</h1>
-<h2 class="no-counter">Any inquire can be solved through the contact form, <?= c('navigation/hire-me') ?></h2>
+<h2 class="no-counter">Any inquire can be solved through <?= c('navigation/hire-me', [ 'label' => 'this contact form' ]) ?>.</h2>
 
 <?= c('img', [
     'class'  => 'original',
