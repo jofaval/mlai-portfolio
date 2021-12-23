@@ -9,7 +9,7 @@
  * 
  * @return bool
  */
-function write(string $file, string $content, int $flags = 0)
+function write(string $file, string $content, int $flags = 0): bool
 {
     if (!file_exists(dirname($file))) mkdir(dirname($file), PERMISSIONS, true);
     if (!file_exists($file)) touch($file);
@@ -26,7 +26,7 @@ function write(string $file, string $content, int $flags = 0)
  * 
  * @return string
  */
-function read(string $file)
+function read(string $file): string
 {
     $content = '';
     if (!file_exists($file)) return $content;
@@ -43,7 +43,7 @@ function read(string $file)
  * 
  * @return string
  */
-function get_file_extension(string $file)
+function get_file_extension(string $file): string
 {
     return pathinfo($file, PATHINFO_EXTENSION);
 }
@@ -59,7 +59,8 @@ function get_file_extension(string $file)
  * @author Alex (https://stackoverflow.com/users/288568/alex)
  * @source https://stackoverflow.com/questions/193794/how-can-i-change-a-files-extension-using-php#answer-14726079
  */
-function replace_extension($filename, $new_extension) {
+function replace_extension($filename, $new_extension): string
+{
     $info = pathinfo($filename);
     return ($info['dirname'] ? $info['dirname'] . DIRECTORY_SEPARATOR : '') 
         . $info['filename'] 

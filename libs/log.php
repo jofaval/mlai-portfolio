@@ -5,7 +5,7 @@
  * 
  * @return string
  */
-function get_time()
+function get_time(): string
 {
     return date('[d/m/Y H:i:s]', time());
 }
@@ -18,10 +18,10 @@ function get_time()
  * 
  * @return bool
  */
-function logging(string $message = null, int $log_level = LOG_LEVEL_ALL)
+function logging(string $message = null, int $log_level = LOG_LEVEL_ALL): bool
 {
     // If it's not on the same log_level, don't log it
-    if (LOG_LEVEL !== $log_level) return;
+    if (LOG_LEVEL !== $log_level) return false;
 
     // TODO: implementar dirname en el otro mkdir, crearle una función para ello
     // Add a jumpline at the end

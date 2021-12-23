@@ -9,7 +9,7 @@
  * 
  * @return string
  */
-function c(string $component_name, array $props = null, string $root = COMPONENTS_DIR)
+function c(string $component_name, array $props = null, string $root = COMPONENTS_DIR): string
 {
     // The file that call the component
     $parent_call = debug_backtrace()[0]['file'];
@@ -45,7 +45,7 @@ function c(string $component_name, array $props = null, string $root = COMPONENT
  * 
  * @return string
  */
-function get_public_url(string $path)
+function get_public_url(string $path): string
 {
     // Replace path with the public domain
     if (str_starts_with($path, PUBLIC_DIR)) $path = str_replace(PUBLIC_DIR, APP_URL, $path);
