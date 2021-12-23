@@ -6,13 +6,16 @@ All the log of changes on the project/repository
 - Lazy loading on `<img>` by default
 - Add `canonical` url
 - `robots.txt` file generation
+- Webmaster page on Google for a proper indexation
 - Create `ping` function for URLs
+- Add root `<url>` to `sitemap.xml` generation
 
 ### Modified
 - Now the `<img>` changes only once in the code
 - Change `utf-8` encoding to `UTF-8`
 - `changefreq` on sitemap generation is now on `weekly`
 - Extract `SITEMAP_FILE` constant to `paths`
+- Extract sitemap `<url>` node generation into a separate function
 
 ### Fixed
 - `get_public_url` didn't work for `build` or `img` paths

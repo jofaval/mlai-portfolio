@@ -60,6 +60,9 @@ function str_contains(string $haystack, string $needle): bool
  * @param string $url The URL to ping, by default, it will attempt to ping google.com
  * 
  * @return bool
+ * 
+ * @author Tyler Carter (https://stackoverflow.com/users/58088/tyler-carter)
+ * @source https://stackoverflow.com/questions/1239068/ping-site-and-return-result-in-php#answer-1239090
  */
 function ping(string $url = 'https://google.com'): bool
 {
