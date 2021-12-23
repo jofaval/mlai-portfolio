@@ -22,7 +22,7 @@ function generate_url_sitemap(string $file): array
     $temp_file = ltrim($temp_file, $temp_file[0]);
     $loc = get_public_url($temp_file);
     $lastmod = date('Y-m-d', filemtime($file));
-    $changefreq = 'monthly';
+    $changefreq = 'weekly';
     $priority = '0.8';
 
     $details = [ 'loc' => $loc, 'lastmod' => $lastmod, 'changefreq' => $changefreq, 'priority' => $priority, ];
