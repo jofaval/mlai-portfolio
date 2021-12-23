@@ -79,6 +79,13 @@ define('LIBS_DIR', path_join(BASE_DIR, 'libs'));
 define('LOG_FILE', path_join(BASE_DIR, 'logs', 'log.txt'));
 
 /**
+ * The sitemap file path
+ * 
+ * @var string
+ */
+define('SITEMAP_FILE', path_join(BUILD_DIR, 'sitemap.xml'));
+
+/**
  * The robots file path
  * 
  * @var string

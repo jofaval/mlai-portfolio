@@ -11,6 +11,7 @@ All the log of changes on the project/repository
 - Now the `<img>` changes only once in the code
 - Change `utf-8` encoding to `UTF-8`
 - `changefreq` on sitemap generation is now on `weekly`
+- Extract `SITEMAP_FILE` constant to `paths`
 
 ### Fixed
 - `get_public_url` didn't work for `build` or `img` paths

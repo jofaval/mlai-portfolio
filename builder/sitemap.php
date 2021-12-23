@@ -1,13 +1,6 @@
 <?php
 
 /**
- * The sitemap file path
- * 
- * @var string
- */
-define('SITEMAP_FILE', path_join(BUILD_DIR, 'sitemap.xml'));
-
-/**
  * Generate a url sitemap associative array containg all the details
  * 
  * @param string $file The file to work with
