@@ -10,6 +10,7 @@ All the log of changes on the project/repository
 
 ### Fixed
 - `get_public_url` didn't work for `build` paths
+- Replace `function` type on Python for correct `Callable` type
 
 ## 2021-12-22
 ### Added

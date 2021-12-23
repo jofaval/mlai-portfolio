@@ -1,5 +1,5 @@
 import os, paramiko, zipfile, glob
-from typing import List
+from typing import Callable, List
 from posixpath import dirname
 
 from paramiko.sftp_client import SFTPClient
@@ -59,7 +59,7 @@ releasepath = os.path.join('production', 'deployments', releasefilename)
 absolutereleasepath = os.path.realpath(releasepath)
 releaseremotedir = baseremotedir + '/' + releasefilename
 
-def writezipfile(ziph: zipfile.ZipFile, parse: function, file: str) -> None: 
+def writezipfile(ziph: zipfile.ZipFile, parse: Callable[[str,], str], file: str) -> None: 
     """
     Writes a file in a zip
 
