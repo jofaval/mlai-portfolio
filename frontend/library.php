@@ -57,3 +57,17 @@ function get_public_url(string $path = ''): string
 
     return $path;
 }
+
+/**
+ * Get all the sidebar links from the content
+ * 
+ * @param string $content The content to parse
+ * 
+ * @return array<string,string[]>
+ */
+function get_sidebar_links(string $content): array
+{
+    $sidebar_links = [];
+
+    return $sidebar_links;
+}
