@@ -12,6 +12,7 @@ require_once path_join(BUILDER_DIR, 'actions.php');
 require_once path_join(BUILDER_DIR, 'minimize.php');
 require_once path_join(BUILDER_DIR, 'asset.php');
 require_once path_join(BUILDER_DIR, 'build.php');
+require_once path_join(BUILDER_DIR, 'sitemap.php');
 
 // Set global locale
 setlocale(LC_ALL, LOCALE);

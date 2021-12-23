@@ -49,6 +49,8 @@ function deploy(): void
     // Print response
     foreach ($output as $line) echo "$line\n";
 
+    sitemap();
+
     logging('deployed');
 }
 
@@ -62,4 +64,22 @@ function deploy(): void
 function create_project(string $name): void
 {
     # code...
+}
+
+/**
+ * Generates the sitemap
+ * 
+ * @return void
+ */
+function sitemap(): void
+{
+    $success = generate_sitemap();
+
+    // Log the message
+    echo $success
+        ? "Sitemap succesfully generated\n"
+        : "Couldn\'t generate the sitemap\n";
+
+    // Log the sitemap generation
+    if ($success) log('sitemap generated');
 }
