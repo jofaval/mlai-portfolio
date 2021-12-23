@@ -97,4 +97,4 @@ define('ROBOTS_FILE', path_join(BUILD_DIR, 'robots.txt'));
  * 
  * @var string
  */
-define('PROJECTS_DIR', path_join(BUILD_DIR, 'projects'));
+define('PROJECTS_DIR', path_join(PUBLIC_DIR, 'projects'));

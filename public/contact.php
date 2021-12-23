@@ -41,8 +41,6 @@ $content = ob_get_clean();
 
 $layout = c('main', [
     'content' => $content,
-    'styles'  => $styles,
-    'scripts' => $scripts,
 ], LAYOUTS_DIR);
 
 echo $layout;

@@ -2,8 +2,8 @@
 
 $links = [
     [ 'label' => 'Home', 'href' => '' ],
-    [ 'label' => 'Projects', 'href' => 'projects' ],
-    [ 'label' => 'Contact', 'href' => 'contact' ],
+    [ 'label' => 'Projects', 'href' => 'projects.html' ],
+    [ 'label' => 'Contact', 'href' => 'contact.html' ],
 ];
 
 ?>
@@ -25,6 +25,7 @@ $links = [
                     <?php
                         $href = get_public_url($link['href']);
                         $link['href'] = $href;
+                        if (!isset($link['class'])) $link['class'] = '';
                         $link['class'] .= ' header-link';
                     ?>
 
