@@ -19,6 +19,7 @@ All the log of changes on the project/repository
 - `changefreq` on sitemap generation is now on `weekly`
 - Extract `SITEMAP_FILE` constant to `paths`
 - Extract sitemap `<url>` node generation into a separate function
+- Center main entry title and subtitle in a separate file
 
 ### Fixed
 - `get_public_url` didn't work for `build` or `img` paths
