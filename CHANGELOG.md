@@ -2,6 +2,12 @@
 All the log of changes on the project/repository
 
 ## 2021-12-23
+### Added
+- Lazy loading on `<img>` by default
+
+### Modified
+- Now the `<img>` changes only once in the code
+
 ### Fixed
 - `get_public_url` didn't work for `build` paths
 
