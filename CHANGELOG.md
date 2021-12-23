@@ -6,6 +6,7 @@ All the log of changes on the project/repository
 - Lazy loading on `<img>` by default
 - Add `canonical` url
 - `robots.txt` file generation
+- Create `ping` function for URLs
 
 ### Modified
 - Now the `<img>` changes only once in the code

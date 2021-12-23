@@ -53,3 +53,29 @@ function str_contains(string $haystack, string $needle): bool
 {
     return strpos($haystack, $needle) !== false;
 }
+
+/**
+ * Pings a given URL
+ * 
+ * @param string $url The URL to ping, by default, it will attempt to ping google.com
+ * 
+ * @return bool
+ */
+function ping(string $url = 'https://google.com'): bool
+{
+    $success = true;
+
+    // Ping the given url
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $data = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    // And detect if content was returned
+    $success = $status_code >= 200 && $status_code < 300;
+
+    return $success;
+}
