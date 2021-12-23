@@ -15,7 +15,7 @@ define('ARGS', $argv);
  * 
  * @return mixed|null
  */
-function get_arg(int $index, $default = null)
+function get_arg(int $index, $default = null): ?string
 {
     return isset(ARGS[$index]) ? ARGS[$index] : $default;
 }
@@ -25,7 +25,7 @@ function get_arg(int $index, $default = null)
  * 
  * @return string
  */
-function get_action()
+function get_action(): ?string
 {
     // Take into account the CLI call in the args
     return get_arg(1);
@@ -36,7 +36,7 @@ function get_action()
  * 
  * @return void
  */
-function deploy()
+function deploy(): void
 {
     $python_lib = 'python';
     $deploy_py_path = 'production/upload.py';
@@ -59,7 +59,7 @@ function deploy()
  * 
  * @return string
  */
-function create_project(string $name)
+function create_project(string $name): void
 {
     # code...
 }
