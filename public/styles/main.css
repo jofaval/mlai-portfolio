@@ -79,3 +79,8 @@ h1 + h2
     text-align: center !important;
     text-align-last: center !important;
 }
+
+:is(a, a:link, a:visited)
+{
+  color: var(--color)
+}

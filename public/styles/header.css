@@ -26,7 +26,7 @@
 	font-weight: bold;
 }
 
-#header-title-container a
+#header-title-container :is(a, a:link, a:visited)
 {
     text-decoration: none;
     color: var(--color);
@@ -41,13 +41,13 @@
     flex-wrap: wrap;
 }
 
-#header-links a
+#header-links :is(a, a:link, a:visited)
 {
     color: var(--color);
     margin: 0 .5rem;
 }
 
-.contact-link-container a
+.contact-link-container :is(a, a:link, a:visited)
 {
     color: var(--color);
 }

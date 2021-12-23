@@ -13,7 +13,7 @@
     text-align-last: left;
 }
 
-.contact-table a
+.contact-table :is(a, a:link, a:visited)
 {
     color: var(--color);
 }

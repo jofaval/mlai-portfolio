@@ -19,7 +19,7 @@
     -webkit-backdrop-filter: blur( 8.5px );
 }
 
-#footer a
+#footer :is(a, a:link, a:visited)
 {
     color: var(--color);
 }

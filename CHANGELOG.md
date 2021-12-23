@@ -29,6 +29,7 @@ All the log of changes on the project/repository
 - `get_public_url` didn't work for `build` or `img` paths
 - Replace `function` type on Python for correct `Callable` type
 - Fixed files generation after the deploy (and build) was already done
+- Links having a different color if previously visited
 
 ## 2021-12-22
 ### Added
