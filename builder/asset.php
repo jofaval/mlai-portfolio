@@ -7,7 +7,7 @@
  * 
  * @return string
  */
-function get_build_path(string $path)
+function get_build_path(string $path): string
 {
     $path = str_replace(PUBLIC_DIR, BUILD_DIR, $path);
 
@@ -21,7 +21,7 @@ function get_build_path(string $path)
  * 
  * @return string
  */
-function get_style_content(string $style)
+function get_style_content(string $style): string
 {
     $full_path = path_join(PUBLIC_DIR, 'styles', "$style.css");
 
@@ -39,9 +39,9 @@ function get_style_content(string $style)
  * @param array $styles All the styles to compile
  * @param string $target The target file to create
  * 
- * @return void
+ * @return bool
  */
-function build_styles(string $target, array $styles = [])
+function build_styles(string $target, array $styles = []): bool
 {
     $content = '';
     foreach ($styles as $style) $content .= get_style_content($style);

@@ -7,7 +7,7 @@
  * 
  * @return string
  */
-function minify_pre(string $content)
+function minify_pre(string $content): string
 {
     $content = preg_replace('/\/\*.+\*\//', ' ', $content);
     $content = preg_replace('/\s+/', ' ', $content);
@@ -22,7 +22,7 @@ function minify_pre(string $content)
  * 
  * @return string
  */
-function minify_css(string $file)
+function minify_css(string $file): string
 {
     $minified = $file;
 
@@ -39,7 +39,7 @@ function minify_css(string $file)
  * 
  * @return string
  */
-function minify_html(string $content)
+function minify_html(string $content): string
 {
     $content = minify_pre($content);
 
@@ -53,7 +53,7 @@ function minify_html(string $content)
  * 
  * @return string
  */
-function minify_js(string $file)
+function minify_js(string $file): string
 {
     $minified = $file;
 
@@ -70,7 +70,7 @@ function minify_js(string $file)
  * 
  * @return string
  */
-function minify_img(string $file)
+function minify_img(string $file): string
 {
     // magick convert -strip -interlace Plane -gaussian-blur 0.05 -quality 60% "$file" "$file"
     $file = compress_to_webp($file);
@@ -85,7 +85,7 @@ function minify_img(string $file)
  * 
  * @return string
  */
-function minify(string $file)
+function minify(string $file): string
 {
     // By default it will be the path
     $minified = $file;

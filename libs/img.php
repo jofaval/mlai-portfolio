@@ -7,7 +7,7 @@
  * 
  * @return string|false
  */
-function compress_to_webp(string $file)
+function compress_to_webp(string $file): string
 {
     // Fallback for whenever Imagick may not be installed previously
     if (!extension_loaded('imagick')) return $file;

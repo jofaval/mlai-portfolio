@@ -13,7 +13,7 @@ $props['styles'][] = 'counters';
  * 
  * @return array<string,string[]>
  */
-function get_sidebar_links(string $content)
+function get_sidebar_links(string $content): array
 {
     $sidebar_links = [];
 

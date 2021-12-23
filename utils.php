@@ -5,7 +5,7 @@
  * 
  * @return string
  */
-function path_join()
+function path_join(): string
 {
     $dirs = func_get_args();
 
@@ -20,7 +20,7 @@ function path_join()
  * 
  * @return bool
  */
-function str_starts_with(string $haystack, string $needle)
+function str_starts_with(string $haystack, string $needle): bool
 {
     return strpos($haystack, $needle) === 0;
 }
@@ -33,7 +33,7 @@ function str_starts_with(string $haystack, string $needle)
  * 
  * @return bool
  */
-function str_ends_with(string $haystack, string $needle)
+function str_ends_with(string $haystack, string $needle): bool
 {
     $length = strlen($needle);
     if(!$length) return true;
@@ -49,7 +49,7 @@ function str_ends_with(string $haystack, string $needle)
  * 
  * @return bool
  */
-function str_contains(string $haystack, string $needle)
+function str_contains(string $haystack, string $needle): bool
 {
     return strpos($haystack, $needle) !== false;
 }

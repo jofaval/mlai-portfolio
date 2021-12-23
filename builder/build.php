@@ -7,7 +7,7 @@
  * 
  * @return string
  */
-function get_content(string $file)
+function get_content(string $file): string
 {
     // DEPRECATED
     // $content = file_get_contents($file);
@@ -35,7 +35,7 @@ function get_content(string $file)
  * 
  * @return bool
  */
-function rebuild(string $file = null, bool $absolute = true)
+function rebuild(string $file = null, bool $absolute = true): bool
 {
     // If the file was not given, it get it from the args
     if (is_null($file)) $file = path_join(PUBLIC_DIR, pathinfo(get_arg(2))['filename'] . '.php');
@@ -74,7 +74,7 @@ define('IGNORE_FILES', [
  * 
  * @return string[]
  */
-function get_all_files(string $root = null, string $base_root = PUBLIC_DIR)
+function get_all_files(string $root = null, string $base_root = PUBLIC_DIR): array
 {
     // If no root is given, the $base_root will be used
     if (is_null($root)) $root = $base_root;
@@ -108,7 +108,7 @@ function get_all_files(string $root = null, string $base_root = PUBLIC_DIR)
  * 
  * @return void
  */
-function empty_dir(string $dir)
+function empty_dir(string $dir): void
 {
     foreach(glob($dir . '/*') as $file) {
         if (is_file($file)) unlink($file);
@@ -124,7 +124,7 @@ function empty_dir(string $dir)
  * 
  * @return string[]
  */
-function get_files()
+function get_files(): array
 {
     $files = get_all_files();
 
@@ -166,7 +166,7 @@ function get_files()
  * 
  * @return bool
  */
-function build()
+function build(): bool
 {
     // TODO: implementar dd(); y logs ya de paso?
     $files = get_files();
@@ -183,7 +183,7 @@ function build()
     foreach ($files as $file) {
         $success &= rebuild($file);
         // As soon as it fails, stop it
-        if (!$success) return;
+        if (!$success) return false;
 
         $file_index++;
 

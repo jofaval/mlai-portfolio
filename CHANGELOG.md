@@ -25,6 +25,7 @@ All the log of changes on the project/repository
 - `cli deploy` now also builds, instead of building on the upload deploy
 - Extracted debugging and handlers utilities to `libs/debug.php`
 - Extracted `cli` actions into it's own separate file
+- Add return types to all the functions
 
 ### Fixed
 - Attempting to minify images with HTML minification
