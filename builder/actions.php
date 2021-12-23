@@ -49,8 +49,6 @@ function deploy(): void
     // Print response
     foreach ($output as $line) echo "$line\n";
 
-    sitemap();
-
     logging('deployed');
 }
 
@@ -82,4 +80,22 @@ function sitemap(): void
 
     // Log the sitemap generation
     if ($success) log('sitemap generated');
+}
+
+/**
+ * Generates the robot.txt
+ * 
+ * @return void
+ */
+function robots(): void
+{
+    $success = generate_robots();
+
+    // Log the message
+    echo $success
+        ? "robots.txt succesfully generated\n"
+        : "Couldn\'t generate the robots.txt\n";
+
+    // Log the robots.txt generation
+    if ($success) log('robots.txt generated');
 }

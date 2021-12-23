@@ -105,3 +105,17 @@ define('APP_DESC', 'My portfolio about Machine Learning and Artificial Intellige
  * @var string
  */
 define('AUTHOR', 'jofaval');
+
+/**
+ * The robots configuration array
+ * 
+ * @var array<string,array<string,string>>
+ */
+define('ROBOTS_CONFIGURATION', [
+    'Googlebot' => [
+        'Disallow' => '/nogooglebot/',
+    ],
+    '*' => [
+        'Allow' => '/',
+    ],
+]);

@@ -5,6 +5,7 @@ All the log of changes on the project/repository
 ### Added
 - Lazy loading on `<img>` by default
 - Add `canonical` url
+- `robots.txt` file generation
 
 ### Modified
 - Now the `<img>` changes only once in the code
@@ -14,6 +15,7 @@ All the log of changes on the project/repository
 ### Fixed
 - `get_public_url` didn't work for `build` or `img` paths
 - Replace `function` type on Python for correct `Callable` type
+- Fixed files generation after the deploy (and build) was already done
 
 ## 2021-12-22
 ### Added

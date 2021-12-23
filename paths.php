@@ -77,3 +77,10 @@ define('LIBS_DIR', path_join(BASE_DIR, 'libs'));
  * @var string
  */
 define('LOG_FILE', path_join(BASE_DIR, 'logs', 'log.txt'));
+
+/**
+ * The robots file path
+ * 
+ * @var string
+ */
+define('ROBOTS_FILE', path_join(BUILD_DIR, 'robots.txt'));
