@@ -12,6 +12,7 @@ All the log of changes on the project/repository
 - Create header links as a navigation menu
   - header links
   - contact link for "hiring"
+- Create basic contact page
 
 ### Modified
 - Now the `<img>` changes only once in the code
