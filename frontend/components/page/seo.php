@@ -39,3 +39,5 @@
 <title><?= $title ?></title>
 <meta name="description" content="<?= APP_DESC ?>">
 <link rel="shortcut icon" href="<?= $cover_img ?>" type="image/x-icon">
+
+<link rel="canonical" href="<?= APP_URL ?>">

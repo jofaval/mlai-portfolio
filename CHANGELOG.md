@@ -4,9 +4,11 @@ All the log of changes on the project/repository
 ## 2021-12-23
 ### Added
 - Lazy loading on `<img>` by default
+- Add `canonical` url
 
 ### Modified
 - Now the `<img>` changes only once in the code
+- Change `utf-8` encoding to `UTF-8`
 
 ### Fixed
 - `get_public_url` didn't work for `build` or `img` paths
