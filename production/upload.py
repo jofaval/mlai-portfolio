@@ -59,7 +59,25 @@ releasepath = os.path.join('production', 'deployments', releasefilename)
 absolutereleasepath = os.path.realpath(releasepath)
 releaseremotedir = baseremotedir + '/' + releasefilename
 
-def zipfiles(root, files, filename) -> None:
+def writezipfile(ziph: zipfile.ZipFile, parse: function, file: str) -> None: 
+    """
+    Writes a file in a zip
+
+    ziph : Connector
+        The zip file handler
+    parse : lambda
+        The pre-processing function
+    file : str
+        The file to wite
+
+    returns None
+    """
+    if DEBUG: print(f'Zipping file {file}')
+
+    targetfile = parse(file)
+    ziph.write(file, targetfile)
+
+def zipfiles(root: str, files: List[str], filename: str) -> None:
     """
     Zips files for the upload
 
@@ -69,12 +87,14 @@ def zipfiles(root, files, filename) -> None:
         All the files to zip
     filename : str
         Target filename of the .zip
+
+    returns None
     """
     start = time.time()
 
     with zipfile.ZipFile(filename, 'w', zipfile.ZIP_DEFLATED, compresslevel=1) as ziph:
         parse = lambda f: f.replace(root, '').replace('\\', '/')[1:]
-        [ ziph.write(file, parse(file)) for file in files ]
+        [ writezipfile(ziph, parse, file) for file in files ]
 
     end = time.time()
     progress = datetime.timedelta(seconds=(end - start))

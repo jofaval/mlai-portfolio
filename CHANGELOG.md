@@ -27,6 +27,7 @@ All the log of changes on the project/repository
 - Extracted debugging and handlers utilities to `libs/debug.php`
 - Extracted `cli` actions into it's own separate file
 - Add return types to all the functions
+- Extract zip file writting in `upload.py`
 
 ### Fixed
 - Attempting to minify images with HTML minification
