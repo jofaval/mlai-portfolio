@@ -13,6 +13,7 @@ All the log of changes on the project/repository
   - header links
   - contact link for "hiring"
 - Create basic contact page
+- Create projects page with project listing (using file reading)
 
 ### Modified
 - Now the `<img>` changes only once in the code

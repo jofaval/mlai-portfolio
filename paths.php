@@ -91,3 +91,10 @@ define('SITEMAP_FILE', path_join(BUILD_DIR, 'sitemap.xml'));
  * @var string
  */
 define('ROBOTS_FILE', path_join(BUILD_DIR, 'robots.txt'));
+
+/**
+ * The projects dir
+ * 
+ * @var string
+ */
+define('PROJECTS_DIR', path_join(BUILD_DIR, 'projects'));
