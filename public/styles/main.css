@@ -5,9 +5,16 @@
 
 :root
 {
-    --primary: hsl(216, 37%, 30%);
-    --primary-dark: hsl(217, 89%, 59%);
+    --primary-opacity: 1;
+    --primary: hsla(216, 37%, 30%, var(--primary-opacity));
+    --primary-dark-opacity: 1;
+    --primary-dark: hsla(217, 89%, 59%, var(--primary-dark-opacity));
+    --color: hsl(0, 0, 10%);
+    /* --color: white; */
     --hue-rotate: 40deg;
+
+    --max-container-width: 1240px;
+    --max-container-padding: calc(calc(100vw - var(--max-container-width)) / 2);
 }
 
 html,
@@ -19,7 +26,7 @@ body
 
 html
 {
-	scrollbar-color: var(--primary) transparent;
+	scrollbar-color: var(--color) transparent;
 	scrollbar-width: thin;
 }
 
@@ -27,9 +34,24 @@ body
 {
     font-family: 'Courier New', Courier, monospace;
     text-rendering: optimizeLegibility;
-    color: var(--primary);
+    color: var(--color);
     filter: hue-rotate(40deg);
     background-color: #fdffc8;
+
+    background-position: center;
+    background-attachment: fixed;
+    background: linear-gradient(to right, #373b44, #4286f4);
+    /* color: white; */
+    /* https://uigradients.com/#DarkOcean */
+    background: #373B44;
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+    background: linear-gradient(to right, #4286f4, #373B44);
+
+    /* https://uigradients.com/#MegaTron */
+    background: #C6FFDD;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .original

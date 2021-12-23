@@ -10,9 +10,24 @@
     background-color: var(--primary-dark);
     width: 100%;
     padding: 2rem;
+
+    --primary-opacity: 0.3;
+    /* background: var(--primary-dark); */
+    background: hsla(217, 89%, 59%, 0.3);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 8.5px );
+    -webkit-backdrop-filter: blur( 8.5px );
 }
 
 #footer a
 {
-    color: white;
+    color: var(--color);
+}
+
+@media screen and (min-width: 1240px) {
+    #footer
+    {
+        padding-left: var(--max-container-padding);
+        padding-right: var(--max-container-padding);
+    }
 }

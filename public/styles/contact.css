@@ -12,3 +12,8 @@
 {
     text-align-last: left;
 }
+
+.contact-table a
+{
+    color: var(--color);
+}

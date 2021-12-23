@@ -20,6 +20,7 @@ All the log of changes on the project/repository
 - Extract `SITEMAP_FILE` constant to `paths`
 - Extract sitemap `<url>` node generation into a separate function
 - Center main entry title and subtitle in a separate file
+- Visually redesign, and implement a kind of "glassmorphism"
 
 ### Fixed
 - `get_public_url` didn't work for `build` or `img` paths
