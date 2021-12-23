@@ -41,11 +41,12 @@ set_exception_handler('general_exception_handler');
  * @param string $errstr The message it throwed
  * @param string $errfile The file where it happend
  * @param int $errline The line of the file where it happened
+ * @param array $errcontext The context of the error
  * @param bool $display Determines wether it should display the details, it won't by default
  * 
  * @return void
  */
-function general_error_handler(int $errno, string $errstr, string $errfile, int $errline, bool $display = false): void
+function general_error_handler(int $errno, string $errstr, string $errfile, int $errline, array $errcontext, bool $display = false): void
 {
     $message = "An error [code:$errno] with message \"$errstr\" at '$errfile:$errline'";
     logging($message);
