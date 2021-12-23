@@ -9,6 +9,9 @@ All the log of changes on the project/repository
 - Webmaster page on Google for a proper indexation
 - Create `ping` function for URLs
 - Add root `<url>` to `sitemap.xml` generation
+- Create header links as a navigation menu
+  - header links
+  - contact link for "hiring"
 
 ### Modified
 - Now the `<img>` changes only once in the code

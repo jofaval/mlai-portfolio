@@ -41,11 +41,11 @@ function c(string $component_name, array $props = null, string $root = COMPONENT
 /**
  * Gets the public url from a public resource for external access
  * 
- * @param string $path The asset path to process
+ * @param string $path The asset path to process, the root by default
  * 
  * @return string
  */
-function get_public_url(string $path): string
+function get_public_url(string $path = ''): string
 {
     // Replace path with the public domain
     if (str_starts_with($path, PUBLIC_DIR)) $path = str_replace(PUBLIC_DIR, APP_URL, $path);
