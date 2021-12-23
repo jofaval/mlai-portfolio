@@ -18,6 +18,7 @@ All the log of changes on the project/repository
 - Specify libraries and tech-stack base of the proejct in the README.md
 - CLI no action given fallback
 - Create a sitemap file generation following the standard
+- Documen the CLI interaction and configuration
 
 ### Modified
 - Added "Link to" to `aria-label` in links for a more cohesive screen-reading

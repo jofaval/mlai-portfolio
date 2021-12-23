@@ -16,6 +16,24 @@ It comes from **M**achine **L**earning and **A**rtificial **I**ntelligence. It's
 - Minify external library
 - ImageMagick library
 
+### CLI
+**C**ommand **L**ine **I**nterface, it's the built-in utility for bash interaction with the actions.
+
+#### Compile the site
+`php cli build`
+
+Or `php cli rebuild file[.php]` for an specific file
+
+#### Generate the sitemap
+`php cli sitemap`
+
+#### Deploy
+It does a `cli build` internally and a `cli sitemap`
+
+For this to work you'll need to create a `production/config.py` with the variables [ `host`: `str`, `port`: `int`, `username`: `str`, `password`: `str` ]
+
+`php cli deploy`
+
 ## Experience
 
 All my experience
