@@ -1,6 +1,10 @@
 # CHANGELOG #
 All the log of changes on the project/repository
 
+## 2021-12-23
+### Fixed
+- `get_public_url` didn't work for `build` paths
+
 ## 2021-12-22
 ### Added
 - Added `no-counter` now some headers won't be counted

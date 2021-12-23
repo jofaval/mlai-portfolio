@@ -49,6 +49,7 @@ function get_public_url(string $path): string
 {
     // Replace path with the public domain
     if (str_starts_with($path, PUBLIC_DIR)) $path = str_replace(PUBLIC_DIR, APP_URL, $path);
+    if (str_starts_with($path, BUILD_DIR)) $path = str_replace(BUILD_DIR, APP_URL, $path);
     else $path = path_join(APP_URL, $path);
     // Replace the path separator
     $path = str_replace(DIRECTORY_SEPARATOR, '/', $path);
