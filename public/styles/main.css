@@ -26,7 +26,7 @@ body
 
 html
 {
-	scrollbar-color: var(--color) transparent;
+	scrollbar-color: var(--primary) #C6FFDD;
 	scrollbar-width: thin;
 }
 

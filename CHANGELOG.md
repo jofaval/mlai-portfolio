@@ -1,6 +1,10 @@
 # CHANGELOG #
 All the log of changes on the project/repository
 
+## 2021-12-24
+### Fixed
+- Scrollbar color
+
 ## 2021-12-23
 ### Added
 - Lazy loading on `<img>` by default
