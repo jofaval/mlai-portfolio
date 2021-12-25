@@ -15,6 +15,7 @@ All the log of changes on the project/repository
 - Create and implement manifest generation
   - icons and custom splash screen left
   - Create `cli pwa` action
+- Create `pwa` component for meta tags
 
 ### Modified
 - Contact `<img>` loaded directly
