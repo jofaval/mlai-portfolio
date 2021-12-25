@@ -8,6 +8,7 @@ All the log of changes on the project/repository
 - Create a `serviceWorker` action and add it to the `cli build`
 - Styles and scripts dir constants
 - Refactor title to a function global `get_page_title`
+- Service worker totally functional on production
 - Create a `create` helper function
   - Implement `cli component` action
   - Implement `cli action` action
