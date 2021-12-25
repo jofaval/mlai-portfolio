@@ -7,6 +7,7 @@ All the log of changes on the project/repository
 - `serviceWorker` is now implemented caching all pages
 - Create a `serviceWorker` action and add it to the `cli build`
 - Styles and scripts dir constants
+- Refactor title to a function global `get_page_title`
 
 ### Modified
 - Contact `<img>` loaded directly

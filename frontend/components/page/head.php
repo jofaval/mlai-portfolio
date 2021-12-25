@@ -1,5 +1,4 @@
-<!-- TODO: implement get_page_title with this fallback -->
-<?php if (!isset($title)) $title = 'Pepe Fabra Valverde - M.L. & A.I. Portfolio' ?>
+<?php if (!isset($title)) $title = get_page_title($title) ?>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;" charset="UTF-8" /> 

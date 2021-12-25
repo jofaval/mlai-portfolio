@@ -71,3 +71,18 @@ function get_sidebar_links(string $content): array
 
     return $sidebar_links;
 }
+
+/**
+ * Gets the page title
+ * 
+ * @param string $title The given title, by default the app title
+ * 
+ * @return string
+ */
+function get_page_title(string $title = null): string
+{
+    // By default the app title
+    if (is_null($title)) $title = APP_TITLE;
+
+    return $title;
+}
