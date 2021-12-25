@@ -132,3 +132,17 @@ define('IGNORE_FILES', [
     '.js',
     // path_join('public', 'index.html'),
 ]);
+
+/**
+ * The app name
+ * 
+ * @var string
+ */
+define('APP_NAME', 'M.L. & A.I. Portfolio');
+
+/**
+ * The app shortname
+ * 
+ * @var string
+ */
+define('APP_SHORTNAME', 'MLAI Portfolio');

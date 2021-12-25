@@ -201,3 +201,22 @@ function sw(): void
     // Log the robots.txt generation
     if ($success) log('sw.js imported');
 }
+
+/**
+ * Makes the Web-App a PWA 
+ * 
+ * @return void
+ */
+function pwa(): void
+{
+    $success = make_pwa();
+
+    // Log the message
+    echo $success
+        ? "Succesfully converted to PWA\n"
+        : "Couldn\'t import conver to PWA\n";
+
+    // Log the PWA conversion
+    if ($success) log('made pwa');
+}
+

@@ -14,6 +14,8 @@ require_once path_join(BUILDER_DIR, 'asset.php');
 require_once path_join(BUILDER_DIR, 'build.php');
 require_once path_join(BUILDER_DIR, 'sitemap.php');
 require_once path_join(BUILDER_DIR, 'robot.php');
+require_once path_join(BUILDER_DIR, 'service-worker.php');
+require_once path_join(BUILDER_DIR, 'pwa.php');
 
 // Set global locale
 setlocale(LC_ALL, LOCALE);

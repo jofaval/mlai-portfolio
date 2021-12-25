@@ -12,6 +12,9 @@ All the log of changes on the project/repository
 - Create a `create` helper function
   - Implement `cli component` action
   - Implement `cli action` action
+- Create and implement manifest generation
+  - icons and custom splash screen left
+  - Create `cli pwa` action
 
 ### Modified
 - Contact `<img>` loaded directly

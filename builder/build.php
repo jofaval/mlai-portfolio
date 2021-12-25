@@ -187,6 +187,7 @@ function build(): bool
     sitemap();
     robots();
     sw();
+    pwa();
 
     logging('built');
 

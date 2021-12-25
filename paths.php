@@ -107,6 +107,13 @@ define('PROJECTS_DIR', path_join(PUBLIC_DIR, 'projects'));
 define('SERVICE_WORKER_FILE', path_join(PUBLIC_DIR, 'sw.js'));
 
 /**
+ * The manifest file path
+ * 
+ * @var string
+ */
+define('MANIFEST_FILE', path_join(PUBLIC_DIR, 'manifest.json'));
+
+/**
  * The styles dir
  * 
  * @var string
