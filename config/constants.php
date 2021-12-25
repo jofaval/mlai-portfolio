@@ -119,3 +119,16 @@ define('ROBOTS_CONFIGURATION', [
         'Allow' => '/',
     ],
 ]);
+
+/**
+ * All the files to ignore
+ * 
+ * @var string[]
+ */
+define('IGNORE_FILES', [
+    '.css',
+    // 'styles/*',
+    'sw.js',
+    '.js',
+    // path_join('public', 'index.html'),
+]);

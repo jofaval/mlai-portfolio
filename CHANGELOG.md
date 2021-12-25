@@ -10,6 +10,7 @@ All the log of changes on the project/repository
 
 ### Modified
 - Contact `<img>` loaded directly
+- Move `IGNORE_FILES` to constants file
 
 ## 2021-12-24
 ### Modified

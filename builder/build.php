@@ -55,18 +55,6 @@ function rebuild(string $file = null, bool $absolute = true): bool
 }
 
 /**
- * All the files to ignore
- * 
- * @var string[]
- */
-define('IGNORE_FILES', [
-    '.css',
-    // 'styles/*',
-    '.js',
-    // path_join('public', 'index.html'),
-]);
-
-/**
  * Retruns all the files to compile
  * 
  * @param string $root The root from which to get all files
