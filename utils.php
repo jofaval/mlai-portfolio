@@ -9,6 +9,17 @@ function path_join(): string
 {
     $dirs = func_get_args();
 
+    // Makes sure that none of the dirs ends or starts with a '/'
+    $dirs = array_map(function (string $dir)
+    {
+        // Must not start with '/'
+        if (str_starts_with($dir, DIRECTORY_SEPARATOR)) $dir = ltrim($dir, DIRECTORY_SEPARATOR);
+        // Must not end in '/'
+        if (str_ends_with($dir, DIRECTORY_SEPARATOR)) $dir = rtrim($dir, DIRECTORY_SEPARATOR);
+
+        return $dir;
+    }, $dirs);
+
     return join(DIRECTORY_SEPARATOR, $dirs);
 }
 

@@ -14,6 +14,9 @@ All the log of changes on the project/repository
 - Move `IGNORE_FILES` to constants file
 - Use styles and scripts constants
 
+### Fixed
+- `path_join` didn't take into account dirs ending or starting with a `/`
+
 ## 2021-12-24
 ### Modified
 - `lastmod` on sitemap, with full modification datetime
