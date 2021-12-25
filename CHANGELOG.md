@@ -2,6 +2,9 @@
 All the log of changes on the project/repository
 
 ## 2021-12-25
+### Added
+- `<img>` component now loads the dimensions onto the img
+
 ### Modified
 - Contact `<img>` loaded directly
 

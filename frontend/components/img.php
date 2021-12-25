@@ -9,6 +9,10 @@ if (!isset($label)) $label = "An image of $title";
 if (!isset($figure)) $figure = false;
 if (!isset($lazy)) $lazy = true;
 
+// Img dimensions, doesn't matter if it's a local resource or an external one
+$dimensions = [ 0, 1 ];
+if ($src) $dimensions = getimagesize($src);
+
 ?>
 
 <?php ob_start(); ?>
@@ -18,6 +22,8 @@ if (!isset($lazy)) $lazy = true;
         class="img <?= $class ?>"
         aria-label="<?= $label ?>"
         title="<?= $title ?>"
+        width="<?= $dimensions[0] ?>"
+        height="<?= $dimensions[1] ?>"
         id="<?= $id ?>"
         <?php if ($lazy): ?> loading="lazy" <?php endif; ?>
     >
