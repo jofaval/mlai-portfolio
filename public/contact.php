@@ -8,6 +8,7 @@
     'alt'    => 'jofaval',
     'src'    => get_public_url( minify_img(path_join(IMG_DIR, 'jofaval.jpg')) ),
     'figure' => true,
+    'lazy'   => false,
 ]) ?>
 
 <table class="contact-table">

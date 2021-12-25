@@ -1,6 +1,10 @@
 # CHANGELOG #
 All the log of changes on the project/repository
 
+## 2021-12-25
+### Modified
+- Contact `<img>` loaded directly
+
 ## 2021-12-24
 ### Modified
 - `lastmod` on sitemap, with full modification datetime
