@@ -101,6 +101,90 @@ function robots(): void
 }
 
 /**
+ * Creates a resource file
+ * 
+ * @param string $dir The base directory from which to create the file
+ * @param bool $override Will it override the component if it previously exists? It won't by default
+ * @param string $filename The filename, it will be null by default
+ * 
+ * @return bool
+ */
+function create(string $dir, bool $override = false, string $filename = null)
+{
+    // If it doesn't exist, get it from the args
+    if (is_null($filename)) $filename = get_arg(2);
+    // If no filename was given, return null
+    if (!$filename) return null;
+
+    // Create the dir
+    $full_filename_path = path_join($dir, "$filename.php");
+
+    // Don't override it if that's what was asked for
+    if (!$override && file_exists($full_filename_path)) {
+        echo "[ERROR]: $filename already exists.\n";
+        return false;
+    }
+
+    // If the directory doesn't exist, create it
+    if (!file_exists(dirname($full_filename_path))) mkdir(dirname($full_filename_path), PERMISSIONS, true);
+
+    // Create the empty file
+    $success = touch($full_filename_path);
+
+    return $success;
+}
+
+// TODO: Create a CLI logging method for message displaying
+
+/**
+ * Creates a component
+ * 
+ * @return void
+ */
+function component(): void
+{
+    // Create the empty file
+    $success = create(COMPONENTS_DIR);
+
+    if (is_null($success)) {
+        echo "No component name was given.\n";
+        return;
+    }
+
+    // Generate the message
+    $message = $success
+        ? 'Created succesfully'
+        : 'Couldn\'t be created';
+
+    // Output the message
+    echo $message . ".\n";
+}
+
+/**
+ * Creates an action
+ * 
+ * @return void
+ */
+function action(): void
+{
+    // Create the empty file
+    $success = create(BUILDER_DIR);
+
+    if (is_null($success)) {
+        echo "No action name was given.\n";
+        return;
+    }
+
+    // Generate the message
+    $message = $success
+        ? 'Created succesfully'
+        : 'Couldn\'t be created';
+
+    // Output the message
+    echo $message . ".\n";
+}
+
+/**
  * Creates the service worker
  * 
  * @return void
