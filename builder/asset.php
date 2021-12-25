@@ -23,7 +23,7 @@ function get_build_path(string $path): string
  */
 function get_style_content(string $style): string
 {
-    $full_path = path_join(PUBLIC_DIR, 'styles', "$style.css");
+    $full_path = path_join(STYLES_DIR, "$style.css");
 
     // TODO: detect if it has an http for a request
 

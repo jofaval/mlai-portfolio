@@ -12,6 +12,7 @@ All the log of changes on the project/repository
 ### Modified
 - Contact `<img>` loaded directly
 - Move `IGNORE_FILES` to constants file
+- Use styles and scripts constants
 
 ## 2021-12-24
 ### Modified
