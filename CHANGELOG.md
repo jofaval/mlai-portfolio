@@ -21,6 +21,7 @@ All the log of changes on the project/repository
 - Contact `<img>` loaded directly
 - Move `IGNORE_FILES` to constants file
 - Use styles and scripts constants
+- Return the component name if doesn't exist while importing it
 
 ### Fixed
 - `path_join` didn't take into account dirs ending or starting with a `/`

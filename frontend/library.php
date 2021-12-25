@@ -22,7 +22,7 @@ function c(string $component_name, array $props = null, string $root = COMPONENT
     $full_path = path_join($root, $component_name);
 
     // If the component doesn't exist, don't try to create it
-    if (!file_exists($full_path)) return 'TODO: to implement';
+    if (!file_exists($full_path)) return 'TODO: to implement: ' . $component_name;
 
     // Assign the props to values
     if (!is_null($props)) foreach ($props as $key => $value) $$key = $value;
