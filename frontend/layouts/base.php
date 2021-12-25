@@ -8,6 +8,8 @@
 <html lang="en">
 <?= c('page/head', [ 'title' => $title, 'styles' => $styles, 'scripts' => $scripts ]) ?>
 <body>
+    <?= c('service-worker') ?>
+
     <?= $content ?>
 
     <?= c('page/styles', [ 'styles' => $styles, 'target' => $target ]) ?>
