@@ -14,7 +14,7 @@ function generate_url_sitemap(string $file): array
     $temp_file = str_replace(BUILD_DIR, '', $file);
     $temp_file = ltrim($temp_file, $temp_file[0]);
     $loc = get_public_url($temp_file);
-    $lastmod = date('Y-m-d', filemtime($file));
+    $lastmod = date('Y-m-d\TH:i:s+01:00', filemtime($file));
     $changefreq = 'weekly';
     $priority = '0.8';
 

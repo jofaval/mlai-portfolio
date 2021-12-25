@@ -2,6 +2,9 @@
 All the log of changes on the project/repository
 
 ## 2021-12-24
+### Modified
+- `lastmod` on sitemap, with full modification datetime
+
 ### Fixed
 - Scrollbar color
 
