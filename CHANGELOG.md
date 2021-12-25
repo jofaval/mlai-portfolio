@@ -5,6 +5,7 @@ All the log of changes on the project/repository
 ### Added
 - `<img>` component now loads the dimensions onto the img
 - `serviceWorker` is now implemented caching all pages
+- Create a `serviceWorker` action and add it to the `cli build`
 
 ### Modified
 - Contact `<img>` loaded directly

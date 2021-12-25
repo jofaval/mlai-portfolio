@@ -99,3 +99,21 @@ function robots(): void
     // Log the robots.txt generation
     if ($success) log('robots.txt generated');
 }
+
+/**
+ * Creates the service worker
+ * 
+ * @return void
+ */
+function sw(): void
+{
+    $success = create_service_worker();
+
+    // Log the message
+    echo $success
+        ? "sw.js succesfully imported\n"
+        : "Couldn\'t import the sw.js\n";
+
+    // Log the robots.txt generation
+    if ($success) log('sw.js imported');
+}

@@ -98,3 +98,10 @@ define('ROBOTS_FILE', path_join(BUILD_DIR, 'robots.txt'));
  * @var string
  */
 define('PROJECTS_DIR', path_join(PUBLIC_DIR, 'projects'));
+
+/**
+ * The service worker file path
+ * 
+ * @var string
+ */
+define('SERVICE_WORKER_FILE', path_join(PUBLIC_DIR, 'sw.js'));
