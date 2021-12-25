@@ -105,3 +105,17 @@ define('PROJECTS_DIR', path_join(PUBLIC_DIR, 'projects'));
  * @var string
  */
 define('SERVICE_WORKER_FILE', path_join(PUBLIC_DIR, 'sw.js'));
+
+/**
+ * The styles dir
+ * 
+ * @var string
+ */
+define('STYLES_DIR', path_join(PUBLIC_DIR, 'styles'));
+
+/**
+ * The scripts dir
+ * 
+ * @var string
+ */
+define('SCRIPTS_DIR', path_join(PUBLIC_DIR, 'scripts'));
