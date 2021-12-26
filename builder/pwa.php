@@ -14,7 +14,7 @@ function get_icon(string $icon_path): array
         "src"     => '',
         "sizes"   => '',
         "type"    => '',
-        "purpose" => 'maskable',
+        "purpose" => 'any maskable',
     ];
 
     // Get all the image info
@@ -38,8 +38,11 @@ function get_icons(): array
 {
     // https://developer.mozilla.org/es/docs/Web/Manifest
 
-    // Get all images from the PWA_ICONS_PATH
-    $icons = get_all_files(get_build_path(PWA_ICONS_DIR));
+    // Get all images from the PWA_ICONS_DIR and PWA_SPLASHSCREEN_DIR
+    $icons = array_merge(
+        get_all_files(get_build_path(PWA_ICONS_DIR)),
+        get_all_files(get_build_path(PWA_SPLASHSCREEN_DIR)),
+    );
     // And map them to get the content
     $icons = array_map('get_icon', $icons);
 
@@ -111,6 +114,59 @@ function create_icons(): bool
 }
 
 /**
+ * Create the splash screens for the app
+ * 
+ * @param bool $stop_at_fail Will it stop if an img can't be generated? It won't by default
+ * 
+ * @return bool
+ */
+function create_splash_screens(bool $stop_at_fail = false): bool
+{
+    $success = true;
+
+    // All the dimensions to be used
+    $dimensions = [
+        [ 640 , 1136 ],
+        [ 750 , 1334 ],
+        [ 1242, 2208 ],
+        [ 1125, 2436 ],
+        [ 1536, 2048 ],
+        [ 1668, 2224 ],
+        [ 2048, 2732 ],
+    ];
+
+    // The real splash path
+    $target_dir = get_build_path(PWA_SPLASHSCREEN_DIR);
+
+    // Create the splash path if doesn't already exist
+    if (!file_exists($target_dir)) mkdir($target_dir, PERMISSIONS, true);
+
+    // The details general to all the splash screens
+    $details = [];
+
+    // Create all the splashes for each dimension given
+    foreach ($dimensions as $dimen) {
+        // Extract the width and height
+        [ $width, $height ] = $dimen;
+        $filename = "splash-{$width}x{$height}.jpg";
+        // Generate the splash path
+        $target_path = path_join($target_dir, $filename);
+
+        // Actually creates the splash
+        $success &= create_splash_screen($target_path, $width, $height, $details);
+
+        // If at any given moment, a splash fails generating, stop the process
+        if ($stop_at_fail && !$success) return false;
+
+        // echo "\"$filename\" was generated successfully.\n";
+    }
+
+    // TODO: should I add the logo/favicon image in the center? icons already do that
+
+    return $success;
+}
+
+/**
  * Make the app a Progressive Web-App
  * 
  * @return bool
@@ -122,6 +178,7 @@ function make_pwa(): bool
     // All the steps for making the app a Progressive Web-App
     $steps = [
         'create_icons',
+        'create_splash_screens',
         'create_manifest',
     ];
 

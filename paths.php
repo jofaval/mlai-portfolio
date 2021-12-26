@@ -140,3 +140,10 @@ define('PWA_ICONS_DIR', path_join(IMG_DIR, 'pwa', 'icons'));
  * @var string
  */
 define('PWA_ICON', path_join(IMG_DIR, 'jofaval.png'));
+
+/**
+ * The PWA icons dir
+ * 
+ * @var string
+ */
+define('PWA_SPLASHSCREEN_DIR', path_join(IMG_DIR, 'pwa', 'splash'));

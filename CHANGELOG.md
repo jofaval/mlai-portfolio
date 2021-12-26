@@ -1,6 +1,14 @@
 # CHANGELOG #
 All the log of changes on the project/repository
 
+## 2021-12-26
+### Added
+- Splash screens generation
+  - And added to the `manifest.json`
+
+### Modified
+- All icons now have an `any maskable` `purpose`
+
 ## 2021-12-25
 ### Added
 - `<img>` component now loads the dimensions onto the img
