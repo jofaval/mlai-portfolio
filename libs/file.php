@@ -11,7 +11,7 @@
  */
 function write(string $file, string $content, int $flags = 0): bool
 {
-    if (!file_exists(dirname($file))) mkdir(dirname($file), PERMISSIONS, true);
+    create_dir($file);
     if (!file_exists($file)) touch($file);
 
     $success = file_put_contents($file, $content, $flags) !== false;
@@ -66,4 +66,23 @@ function replace_extension($filename, $new_extension): string
         . $info['filename'] 
         . '.' 
         . $new_extension;
+}
+
+/**
+ * Creates a dir if doesn't previously exist
+ * 
+ * @param string $dir The dir to attempt to create
+ * 
+ * @return bool
+ */
+function create_dir(string $dir): bool
+{
+    // If a dir is not given, it is forcefully retrieved
+    if (pathinfo($dir, PATHINFO_EXTENSION)) $dir = dirname($dir);
+
+    // If it does already exist, return true
+    if (file_exists($dir)) return true;
+
+    // Create a directory recursively
+    return mkdir($dir, PERMISSIONS, true);
 }

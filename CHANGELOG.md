@@ -6,12 +6,14 @@ All the log of changes on the project/repository
 - Splash screens generation
   - And added to the `manifest.json`
 - Implement the possibility of using `public_url` without the domain
+- Create a `create_dir`
 
 ### Modified
 - All icons now have an `any maskable` `purpose`
 - Fully implement web `related_applications`
 - Now `minify_pre` also removes HTML comments `<!-- -->`
 - Now `minify_pre` also removes single-line comments `//`
+- Implement the `create_dir`
 
 ### Fix
 - Fixed chrome scrollbar `background-color`

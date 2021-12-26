@@ -126,7 +126,7 @@ function create(string $dir, bool $override = false, string $filename = null)
     }
 
     // If the directory doesn't exist, create it
-    if (!file_exists(dirname($full_filename_path))) mkdir(dirname($full_filename_path), PERMISSIONS, true);
+    create_dir($full_filename_path);
 
     // Create the empty file
     $success = touch($full_filename_path);

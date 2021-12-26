@@ -160,8 +160,8 @@ function build(): bool
     $files = get_files();
 
     // Check if file exists, if it does, empty it, if it doesn't create it
-    if (!file_exists(BUILD_DIR)) mkdir(BUILD_DIR);
-    else empty_dir(BUILD_DIR);
+    create_dir(BUILD_DIR);
+    empty_dir(BUILD_DIR);
 
     // TODO: implement threading here?
 
