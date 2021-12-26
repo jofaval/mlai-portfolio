@@ -10,6 +10,9 @@ All the log of changes on the project/repository
 - All icons now have an `any maskable` `purpose`
 - Fully implement web `related_applications`
 
+### Fix
+- Fixed chrome scrollbar `background-color`
+
 ## 2021-12-25
 ### Added
 - `<img>` component now loads the dimensions onto the img
