@@ -21,6 +21,7 @@ All the log of changes on the project/repository
 - Generate PWA icons
   - There's now a PWA icon constant
 - Added `apple-touch-icon`
+- Tested on production PWA is now FULLY FUNCTIONAL!!!
 
 ### Modified
 - Contact `<img>` loaded directly
