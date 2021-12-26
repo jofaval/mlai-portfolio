@@ -10,6 +10,7 @@ All the log of changes on the project/repository
 - All icons now have an `any maskable` `purpose`
 - Fully implement web `related_applications`
 - Now `minify_pre` also removes HTML comments `<!-- -->`
+- Now `minify_pre` also removes single-line comments `//`
 
 ### Fix
 - Fixed chrome scrollbar `background-color`
