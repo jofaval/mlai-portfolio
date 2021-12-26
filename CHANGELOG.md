@@ -8,6 +8,7 @@ All the log of changes on the project/repository
 
 ### Modified
 - All icons now have an `any maskable` `purpose`
+- Fully implement web `related_applications`
 
 ## 2021-12-25
 ### Added

@@ -70,9 +70,12 @@ function create_manifest(): bool
         "scope"                => get_public_url(),
         "display"              => "standalone",
         "icons"                => array_values( get_icons() ),
-        /* "related_applications" => [
-            [ "platform" => "web" ],
-        ], */
+        "related_applications" => [
+            [
+                "platform" => "webapp",
+                "url"      => get_public_url(),
+            ],
+        ],
     ];
 
     // Save the content
