@@ -9,7 +9,11 @@
  */
 function minify_pre(string $content): string
 {
+    // Remove multi-line comments
     $content = preg_replace('/\/\*.+\*\//', ' ', $content);
+    // Remove HTML comments
+    $content = preg_replace('/\<\!\-\-.+\-\-\>/', ' ', $content);
+    // Remove more than one space together
     $content = preg_replace('/\s+/', ' ', $content);
 
     return $content;
@@ -58,6 +62,8 @@ function minify_js(string $file): string
     $minified = $file;
 
     // Retrieve the content of the file
+    // TODO: implement scripts minimizing
+    // TODO: remove JS comments first
     $minified = minify_pre( read($file) );
 
     return $minified;
