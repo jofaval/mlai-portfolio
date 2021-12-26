@@ -14,7 +14,7 @@ function get_icon(string $icon_path): array
         "src"     => '',
         "sizes"   => '',
         "type"    => '',
-        "purpose" => 'maskable any',
+        "purpose" => 'maskable',
     ];
 
     // Get all the image info
@@ -23,7 +23,7 @@ function get_icon(string $icon_path): array
         "src"     => get_public_url($icon_path),
         "sizes"   => "{$width}x{$height}",
         "type"    => mime_content_type($icon_path),
-        "purpose" => 'maskable any',
+        "purpose" => 'maskable',
     ];
 
     return $icon;
@@ -66,10 +66,10 @@ function create_manifest(): bool
         "background_color"     => "#3367D6",
         "start_url"            => get_public_url(),
         "display"              => "standalone",
-        "icons"                => get_icons(),
-        "related_applications" => [
+        "icons"                => array_values( get_icons() ),
+        /* "related_applications" => [
             [ "platform" => "web" ],
-        ],
+        ], */
     ];
 
     // Save the content

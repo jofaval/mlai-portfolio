@@ -111,7 +111,7 @@ define('SERVICE_WORKER_FILE', path_join(PUBLIC_DIR, 'sw.js'));
  * 
  * @var string
  */
-define('MANIFEST_FILE', path_join(PUBLIC_DIR, 'manifest.webmanifest'));
+define('MANIFEST_FILE', path_join(PUBLIC_DIR, 'manifest.json'));
 
 /**
  * The styles dir

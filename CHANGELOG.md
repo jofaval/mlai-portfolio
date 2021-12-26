@@ -28,6 +28,7 @@ All the log of changes on the project/repository
 - Use styles and scripts constants
 - Return the component name if doesn't exist while importing it
 - Update manifest name extension, and use the constant instead of a hardcoded string
+- Made adjustments to icons manifest generation and JSON encoding. ICONS FINALLY WORKING PROPERLY!!
 
 ### Fixed
 - `path_join` didn't take into account dirs ending or starting with a `/`
