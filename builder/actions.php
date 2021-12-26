@@ -79,7 +79,7 @@ function sitemap(): void
         : "Couldn\'t generate the sitemap\n";
 
     // Log the sitemap generation
-    if ($success) log('sitemap generated');
+    if ($success) logging('sitemap generated');
 }
 
 /**
@@ -97,7 +97,7 @@ function robots(): void
         : "Couldn\'t generate the robots.txt\n";
 
     // Log the robots.txt generation
-    if ($success) log('robots.txt generated');
+    if ($success) logging('robots.txt generated');
 }
 
 /**
@@ -199,7 +199,7 @@ function sw(): void
         : "Couldn\'t import the sw.js\n";
 
     // Log the robots.txt generation
-    if ($success) log('sw.js imported');
+    if ($success) logging('sw.js imported');
 }
 
 /**
@@ -217,6 +217,6 @@ function pwa(): void
         : "Couldn\'t import conver to PWA\n";
 
     // Log the PWA conversion
-    if ($success) log('made pwa');
+    if ($success) logging('made pwa');
 }
 

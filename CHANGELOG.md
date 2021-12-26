@@ -26,6 +26,7 @@ All the log of changes on the project/repository
 
 ### Fixed
 - `path_join` didn't take into account dirs ending or starting with a `/`
+- Incorrect `log` usage, meant `logging`
 
 ## 2021-12-24
 ### Modified
