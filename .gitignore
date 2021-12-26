@@ -3,3 +3,4 @@ TODO
 build/*
 production/deployments/*
 logs/*
+ignore/*

@@ -16,6 +16,7 @@ All the log of changes on the project/repository
   - icons and custom splash screen left
   - Create `cli pwa` action
 - Create `pwa` component for meta tags
+- Ignore folder on the repository, for local files of the project
 
 ### Modified
 - Contact `<img>` loaded directly
