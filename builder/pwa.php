@@ -11,17 +11,19 @@ function get_icon(string $icon_path): array
 {
     // If the file doesn't exist, return an empty array
     if (!file_exists($icon_path)) return [
-        "src"   => '',
-        "sizes" => '',
-        "type"  => '',
+        "src"     => '',
+        "sizes"   => '',
+        "type"    => '',
+        "purpose" => 'maskable any',
     ];
 
     // Get all the image info
     [ $width, $height ] = getimagesize($icon_path);
     $icon = [
-        "src"   => get_public_url($icon_path),
-        "sizes" => "{$width}x{$height}",
-        "type"  => mime_content_type($icon_path),
+        "src"     => get_public_url($icon_path),
+        "sizes"   => "{$width}x{$height}",
+        "type"    => mime_content_type($icon_path),
+        "purpose" => 'maskable any',
     ];
 
     return $icon;
@@ -36,8 +38,11 @@ function get_icons(): array
 {
     // https://developer.mozilla.org/es/docs/Web/Manifest
 
-    $icons = [];
-    
+    // Get all images from the PWA_ICONS_PATH
+    $icons = get_all_files(get_build_path(PWA_ICONS_DIR));
+    // And map them to get the content
+    $icons = array_map('get_icon', $icons);
+
     return $icons;
 }
 
@@ -82,8 +87,25 @@ function create_icons(): bool
 {
     $success = true;
 
-    // TODO: implement favicon constant
-    // TODO: implement icon generation
+    $target_dir = get_build_path(PWA_ICONS_DIR);
+
+    // Create the icon path if doesn't already exist
+    if (!file_exists($target_dir)) mkdir($target_dir, PERMISSIONS, true);
+
+    // The base image from which to create the icons
+    $main_icon = PWA_ICON;
+
+    // All the different sizes of the icon
+    $sizes = [ 48, 72, 96, 144, 152, 192, 384, 512 ];
+
+    // Resize the images
+    foreach ($sizes as $size) {
+        // Generate the target path for the icon
+        $target = path_join($target_dir, "icon-{$size}x{$size}.png");
+
+        // Resize the image
+        img_resize($main_icon, $size, $size, $target);
+    }
 
     return $success;
 }

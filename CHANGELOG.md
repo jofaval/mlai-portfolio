@@ -17,12 +17,16 @@ All the log of changes on the project/repository
   - Create `cli pwa` action
 - Create `pwa` component for meta tags
 - Ignore folder on the repository, for local files of the project
+- Implement `img_resize` following PHP's documentation
+- Generate PWA icons
+  - There's now a PWA icon constant
 
 ### Modified
 - Contact `<img>` loaded directly
 - Move `IGNORE_FILES` to constants file
 - Use styles and scripts constants
 - Return the component name if doesn't exist while importing it
+- Update manifest name extension, and use the constant instead of a hardcoded string
 
 ### Fixed
 - `path_join` didn't take into account dirs ending or starting with a `/`

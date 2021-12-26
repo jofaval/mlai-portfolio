@@ -111,7 +111,7 @@ define('SERVICE_WORKER_FILE', path_join(PUBLIC_DIR, 'sw.js'));
  * 
  * @var string
  */
-define('MANIFEST_FILE', path_join(PUBLIC_DIR, 'manifest.json'));
+define('MANIFEST_FILE', path_join(PUBLIC_DIR, 'manifest.webmanifest'));
 
 /**
  * The styles dir
@@ -126,3 +126,17 @@ define('STYLES_DIR', path_join(PUBLIC_DIR, 'styles'));
  * @var string
  */
 define('SCRIPTS_DIR', path_join(PUBLIC_DIR, 'scripts'));
+
+/**
+ * The PWA icons dir
+ * 
+ * @var string
+ */
+define('PWA_ICONS_DIR', path_join(IMG_DIR, 'pwa', 'icons'));
+
+/**
+ * The PWA icon
+ * 
+ * @var string
+ */
+define('PWA_ICON', path_join(IMG_DIR, 'jofaval.png'));
