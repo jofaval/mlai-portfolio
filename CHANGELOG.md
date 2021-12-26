@@ -20,6 +20,7 @@ All the log of changes on the project/repository
 - Implement `img_resize` following PHP's documentation
 - Generate PWA icons
   - There's now a PWA icon constant
+- Added `apple-touch-icon`
 
 ### Modified
 - Contact `<img>` loaded directly
