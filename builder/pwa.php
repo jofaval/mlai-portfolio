@@ -50,6 +50,48 @@ function get_icons(): array
 }
 
 /**
+ * Get all the information of a screenshot
+ * 
+ * @param string $file The absolute path to the file
+ * 
+ * @return array<string,string>
+ */
+function get_screenshot(string $file): array
+{
+    // Get the label of the screenshot
+    $label = ucfirst(pathinfo($file, PATHINFO_FILENAME));
+    $label = "Screenshot of $label";
+
+    // Get all the information as if it was an icon
+    $screenshot = get_icon($file);
+    // Remove previous details
+    unset($screenshot['purpose']);
+
+    // Add new details
+    $screenshot['label'] = $label;
+    $screenshot['platform'] = 'wide';
+
+    return $screenshot;
+}
+
+/**
+ * Get all the screenshots
+ * 
+ * @return array<string,array<string,string>>
+ */
+function get_screenshots(): array
+{
+    // Get all screenshots from the PWA_SCREENSHOTS_DIR
+    $screenshots = array_merge(
+        get_all_files(get_build_path(PWA_SCREENSHOTS_DIR)),
+    );
+    // And map them to get the content
+    $screenshots = array_map('get_screenshot', $screenshots);
+
+    return $screenshots;
+}
+
+/**
  * Create the PWA manifest
  * 
  * @return bool
@@ -69,6 +111,33 @@ function create_manifest(): bool
         "start_url"            => get_public_url(),
         "scope"                => get_public_url(),
         "display"              => "standalone",
+        "orientation"          => "portrait-primary",
+        "categories"           => [
+            "programming",
+            "computer-science",
+            "data-science",
+            "portfolio",
+            "machine-learning",
+            "artificial-intelligence",
+        ],
+        "shortcuts" => [
+            [
+                "name"        => "Home",
+                "url"         => get_public_url('', false),
+                "description" => "Main home of the portfolio"
+            ],
+            [
+                "name"        => "Contact",
+                "url"         => get_public_url('contact.html', false),
+                "description" => "The way to reach me about any inquire",
+            ],
+            [
+                "name"        => "Projects",
+                "url"         => get_public_url('projects.html', false),
+                "description" => "All my projects",
+            ],
+        ],
+        "screenshots"          => array_values( get_screenshots() ),
         "icons"                => array_values( get_icons() ),
         "related_applications" => [
             [
@@ -96,7 +165,7 @@ function create_icons(): bool
     $target_dir = get_build_path(PWA_ICONS_DIR);
 
     // Create the icon path if doesn't already exist
-    if (!file_exists($target_dir)) mkdir($target_dir, PERMISSIONS, true);
+    create_dir($target_dir);
 
     // The base image from which to create the icons
     $main_icon = PWA_ICON;
@@ -142,7 +211,7 @@ function create_splash_screens(bool $stop_at_fail = false): bool
     $target_dir = get_build_path(PWA_SPLASHSCREEN_DIR);
 
     // Create the splash path if doesn't already exist
-    if (!file_exists($target_dir)) mkdir($target_dir, PERMISSIONS, true);
+    create_dir($target_dir);
 
     // The details general to all the splash screens
     $details = [];
@@ -161,10 +230,44 @@ function create_splash_screens(bool $stop_at_fail = false): bool
         // If at any given moment, a splash fails generating, stop the process
         if ($stop_at_fail && !$success) return false;
 
-        // echo "\"$filename\" was generated successfully.\n";
+        echo "\"$filename\" was generated successfully.\n";
     }
 
     // TODO: should I add the logo/favicon image in the center? icons already do that
+
+    return $success;
+}
+
+/**
+ * Creates screenshots of the PWA
+ * 
+ * @return bool
+ */
+function create_screenshots(): bool
+{
+    $success = true;
+
+    // The target dir of the screenshots
+    $target_dir = get_build_path(PWA_SCREENSHOTS_DIR);
+
+    // Create the dir if doesn't already exist
+    create_dir($target_dir);
+
+    // All the pages from which to take a screenshot
+    $pages = [
+        'index.html',
+        'projects.html',
+        'contact.html',
+    ];
+
+    // Take screenshots of all the pages
+    foreach ($pages as $page) {
+        // Convert to public url
+        $url = get_public_url($page);
+
+        // Take a screenshot
+        $success &= screenshot($url, $page);
+    }
 
     return $success;
 }
@@ -182,6 +285,7 @@ function make_pwa(): bool
     $steps = [
         'create_icons',
         'create_splash_screens',
+        'create_screenshots',
         'create_manifest',
     ];
 

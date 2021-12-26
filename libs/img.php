@@ -229,3 +229,56 @@ function hex2rgb($hex): array
 
     return ($rgb);
 }
+
+/**
+ * Creates a screenshot of a given resource
+ * 
+ * @param string $url The resource from which to take a screenshot
+ * @param string $target The target screenshot path
+ * @param string $device The strategy device, MOBILE by default
+ * 
+ * @return bool
+ */
+function screenshot(string $url, string $target, string $device = 'mobile'): bool
+{
+    $success = true;
+
+    // All the HTTP params
+    $params = http_build_query([
+        "url"      => $url,
+        "category" => 'CATEGORY_UNSPECIFIED',
+        "strategy" => $device,
+        // "api" => 'YOUR_API',
+    ]);
+
+    // The final url
+    $url = "https://pagespeedonline.googleapis.com/pagespeedonline/v5/runPagespeed?$params";
+    // TODO: implement
+
+    // Prepare the request
+    $curl_init = curl_init($url);
+    curl_setopt($curl_init,CURLOPT_RETURNTRANSFER,true);
+
+    // Get the response
+    $response = curl_exec($curl_init);
+    curl_close($curl_init);
+
+    // dd('response', $response);
+    // The request failed, don't continue
+    if ($response === false) return false;
+
+    // Get the data
+    $googledata = json_decode($response,true);
+
+    // Parse it
+    $snapdata = $googledata["lighthouseResult"]["audits"]["full-page-screenshot"]["details"];
+    $snap = $snapdata["screenshot"];
+
+    // dd('test', $googledata);
+    $final_target_path = replace_extension($target, '');
+    // imagepng($img, $final_target_path . "png");
+
+    // dd('finished');
+
+    return $success;
+}

@@ -128,11 +128,18 @@ define('STYLES_DIR', path_join(PUBLIC_DIR, 'styles'));
 define('SCRIPTS_DIR', path_join(PUBLIC_DIR, 'scripts'));
 
 /**
+ * The PWA dir
+ * 
+ * @var string
+ */
+define('PWA_DIR', path_join(IMG_DIR, 'pwa'));
+
+/**
  * The PWA icons dir
  * 
  * @var string
  */
-define('PWA_ICONS_DIR', path_join(IMG_DIR, 'pwa', 'icons'));
+define('PWA_ICONS_DIR', path_join(PWA_DIR, 'icons'));
 
 /**
  * The PWA icon
@@ -142,8 +149,15 @@ define('PWA_ICONS_DIR', path_join(IMG_DIR, 'pwa', 'icons'));
 define('PWA_ICON', path_join(IMG_DIR, 'jofaval.png'));
 
 /**
- * The PWA icons dir
+ * The PWA splashscreen dir
  * 
  * @var string
  */
-define('PWA_SPLASHSCREEN_DIR', path_join(IMG_DIR, 'pwa', 'splash'));
+define('PWA_SPLASHSCREEN_DIR', path_join(PWA_DIR, 'splash'));
+
+/**
+ * The PWA screenshots dir
+ * 
+ * @var string
+ */
+define('PWA_SCREENSHOTS_DIR', path_join(PWA_DIR, 'screenshots'));

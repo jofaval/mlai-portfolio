@@ -6,6 +6,12 @@ All the log of changes on the project/repository
 - Splash screens generation
   - And added to the `manifest.json`
 - Implement the possibility of using `public_url` without the domain
+- Proper PWA path cosntants
+- Vastly improve `manifest.json`
+  - Added `orientation` in `portrait-primary`
+  - Added some related `categories`
+  - Added `shortcuts`
+- Implement screenshot system for PWA
 - Create a `create_dir`
 
 ### Modified
