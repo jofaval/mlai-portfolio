@@ -45,13 +45,15 @@ function c(string $component_name, array $props = null, string $root = COMPONENT
  * 
  * @return string
  */
-function get_public_url(string $path = ''): string
+function get_public_url(string $path = '', bool $add_domain = true): string
 {
+    $root = $add_domain ? APP_URL : '';
+
     // Replace path with the public domain
-    if (str_starts_with($path, PUBLIC_DIR)) $path = str_replace(PUBLIC_DIR, APP_URL, $path);
-    else if (str_starts_with($path, BUILD_DIR)) $path = str_replace(BUILD_DIR, APP_URL, $path);
-    else if (str_starts_with($path, IMG_DIR)) $path = str_replace(IMG_DIR, APP_URL, $path);
-    else $path = path_join(APP_URL, $path);
+    if (str_starts_with($path, PUBLIC_DIR)) $path = str_replace(PUBLIC_DIR, $root, $path);
+    else if (str_starts_with($path, BUILD_DIR)) $path = str_replace(BUILD_DIR, $root, $path);
+    else if (str_starts_with($path, IMG_DIR)) $path = str_replace(IMG_DIR, $root, $path);
+    else $path = path_join($root, $path);
     // Replace the path separator
     $path = str_replace(DIRECTORY_SEPARATOR, '/', $path);
 

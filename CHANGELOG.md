@@ -5,6 +5,7 @@ All the log of changes on the project/repository
 ### Added
 - Splash screens generation
   - And added to the `manifest.json`
+- Implement the possibility of using `public_url` without the domain
 
 ### Modified
 - All icons now have an `any maskable` `purpose`
