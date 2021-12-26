@@ -11,6 +11,7 @@ All the log of changes on the project/repository
   - Added `orientation` in `portrait-primary`
   - Added some related `categories`
   - Added `shortcuts`
+  - Add `iarc_rating_id`, not requested, using the sample one
 - Implement screenshot system for PWA
 - Create a `create_dir`
 
@@ -23,6 +24,7 @@ All the log of changes on the project/repository
 
 ### Fix
 - Fixed chrome scrollbar `background-color`
+- Use proper `categories` in `manifest.json`
 
 ## 2021-12-25
 ### Added

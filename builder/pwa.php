@@ -113,13 +113,12 @@ function create_manifest(): bool
         "display"              => "standalone",
         "orientation"          => "portrait-primary",
         "categories"           => [
-            "programming",
-            "computer-science",
-            "data-science",
-            "portfolio",
-            "machine-learning",
-            "artificial-intelligence",
+            "education",
+            "business",
         ],
+        // Requested at: https://www.globalratings.com/contact-us.aspx
+        // Using the sample one from: https://developer.mozilla.org/en-US/docs/Web/Manifest/iarc_rating_id
+        "iarc_rating_id"       => "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
         "shortcuts" => [
             [
                 "name"        => "Home",
@@ -268,6 +267,8 @@ function create_screenshots(): bool
         // Take a screenshot
         $success &= screenshot($url, $page);
     }
+
+    $success = true;
 
     return $success;
 }
