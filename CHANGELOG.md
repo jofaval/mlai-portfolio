@@ -14,6 +14,13 @@ All the log of changes on the project/repository
   - Add `iarc_rating_id`, not requested, using the sample one
 - Implement screenshot system for PWA
 - Create a `create_dir`
+- Vastly improve `serviceWorker`
+  - Add Background sync (with queue)
+  - Add Periodic sync
+  - Add offline work
+
+### Achieved
+- Got a `240` score on https://pwabuilder.com
 
 ### Modified
 - All icons now have an `any maskable` `purpose`
