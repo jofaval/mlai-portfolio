@@ -1,0 +1,22 @@
+#skip-navigation
+{
+    position: absolute;
+    display: block;
+    transform: scale(0%);
+    transform-origin: 0 0;
+
+    padding: 1rem;
+    border-radius: 0 0 .5rem;
+
+    background: white;
+    color: black;
+
+    font-size: max(1rem, 12pt);
+
+    transition: transform 0.2s ease-in;
+}
+
+#skip-navigation:is(:hover, :focus)
+{
+    transform: scale(100%);
+}

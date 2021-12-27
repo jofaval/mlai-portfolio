@@ -9,6 +9,8 @@ $links = [
 ?>
 
 <nav>
+    <?= c('navigation/link', [ 'label' => 'Skip navigation', 'href' => '#main', 'id' => 'skip-navigation' ]) ?>
+
     <header id="header">
         <!-- TITLE -->
         <div id="header-title-container">

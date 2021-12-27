@@ -1,4 +1,4 @@
-<?php $default_styles = [ 'main', 'header', 'footer' ] ?>
+<?php $default_styles = [ 'main', 'header', 'footer', 'components/skip-navigation' ] ?>
 
 <?php if (!isset($styles)) $styles = []; ?>
 <?php $styles = array_unique( array_merge($styles, $default_styles) ) ?>

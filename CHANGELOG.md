@@ -4,6 +4,7 @@ All the log of changes on the project/repository
 ## 2021-12-27
 ### Added
 - The scroll behaviour is now `smooth`
+- Added `skip-navigation` accessibility element, mainly because of [this video](https://www.youtube.com/watch?v=jDDaOFr9nqQ).
 
 ## 2021-12-26
 ### Added
