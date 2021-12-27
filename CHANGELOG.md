@@ -1,6 +1,10 @@
 # CHANGELOG #
 All the log of changes on the project/repository
 
+## 2021-12-27
+### Added
+- The scroll behaviour is now `smooth`
+
 ## 2021-12-26
 ### Added
 - Splash screens generation

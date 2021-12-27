@@ -30,6 +30,7 @@ html
 {
 	scrollbar-color: var(--primary) var(--accent);
 	scrollbar-width: thin;
+    scroll-behavior: smooth;
 }
 
 body
