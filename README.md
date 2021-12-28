@@ -34,6 +34,11 @@ For this to work you'll need to create a `production/config.py` with the variabl
 
 `php cli deploy`
 
+#### PWA
+Generates all the necessary information to create a PWA with the information given
+
+`php cli pwa`
+
 ## Experience
 
 All my experience

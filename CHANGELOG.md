@@ -1,6 +1,10 @@
 # CHANGELOG #
 All the log of changes on the project/repository
 
+## 2021-12-28
+### Added
+- `cli pwa` to the README.md
+
 ## 2021-12-27
 ### Added
 - The scroll behaviour is now `smooth`
@@ -34,7 +38,7 @@ All the log of changes on the project/repository
 - Now `minify_pre` also removes single-line comments `//`
 - Implement the `create_dir`
 
-### Fix
+### Fixed
 - Fixed chrome scrollbar `background-color`
 - Use proper `categories` in `manifest.json`
 
