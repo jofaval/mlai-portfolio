@@ -8,7 +8,7 @@
 
 <footer id="footer">
     <?php foreach ($footer_links as $link): ?>
-        <?= c('navigation/link', $link); ?>
+        <?= c('navigation/link', array_merge( $link, [ 'class' => 'footer-link' ] )); ?>
     <?php endforeach; ?>
 
     <!-- TODO: create contact-link component -->

@@ -87,3 +87,11 @@ h1 + h2
 {
   color: var(--color)
 }
+
+:is(#header, #footer) :is(.header-link, .footer-link, .contact-link) {
+	background: var(--primary);
+	padding: 1rem;
+	border-radius: .25rem;
+	color: white !important;
+	display: inline-block;
+}
