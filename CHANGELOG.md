@@ -1,9 +1,12 @@
 # CHANGELOG #
 All the log of changes on the project/repository
 
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
 ## 2022-01-02
 ### Added
 - A license (GPL-3.0 License)
+- CHANGELOG.md standard
 
 ## 2022-01-02
 ### Added
