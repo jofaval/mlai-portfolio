@@ -3,6 +3,10 @@ All the log of changes on the project/repository
 
 ## 2022-01-02
 ### Added
+- A license (GPL-3.0 License)
+
+## 2022-01-02
+### Added
 - Header and footer links are now `button-like` (modification/improvement needed), providing easier touchability on smartphones
 
 ## 2021-12-28
