@@ -8,6 +8,9 @@ Using a bit of background as a Web Developer I created my website from scratch a
 ### Hosted on
 [mlai.jofaval.com](https://mlai.jofaval.com)
 
+### Structure
+A little more detail about the folder structure can be found [here](./docs/en/Structure.md)
+
 #### Why MLAI?
 It comes from **M**achine **L**earning and **A**rtificial **I**ntelligence. It's a nice acronym and it wouldn't be mistaken so easily with other variations, since `aiml` for example, is already used in computing science for `AIML` (**A**rtificial **I**ntelligence **M**ark-up **L**anguage)
 
@@ -15,6 +18,7 @@ It comes from **M**achine **L**earning and **A**rtificial **I**ntelligence. It's
 - Self-built "pseudo-compiler" for blazing fast loads and easy page design
 - Minify external library
 - ImageMagick library
+
 
 ### CLI
 **C**ommand **L**ine **I**nterface, it's the built-in utility for bash interaction with the actions.
