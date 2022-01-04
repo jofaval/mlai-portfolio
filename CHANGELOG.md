@@ -9,6 +9,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - CHANGELOG.md standard
 - Documented the file structure
 
+### Modified
+- Update wiki pages
+
 ## 2022-01-02
 ### Added
 - Header and footer links are now `button-like` (modification/improvement needed), providing easier touchability on smartphones
