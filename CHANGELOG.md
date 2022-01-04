@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Modified
 - Update wiki pages
+- Now CLI commands use proper `markdown` marking
 
 ## 2022-01-02
 ### Added

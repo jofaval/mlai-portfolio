@@ -24,24 +24,47 @@ It comes from **M**achine **L**earning and **A**rtificial **I**ntelligence. It's
 **C**ommand **L**ine **I**nterface, it's the built-in utility for bash interaction with the actions.
 
 #### Compile the site
-`php cli build`
 
-Or `php cli rebuild file[.php]` for a specific file
+```bash
+php cli build
+```
+
+Or 
+```bash
+php cli rebuild file[.php]
+```
+for a specific file
 
 #### Generate the sitemap
-`php cli sitemap`
+
+```bash
+php cli sitemap
+```
 
 #### Deploy
-It does a `cli build` internally and a `cli sitemap`
+It does a 
+```bash
+php cli build
+```
+internally and a
+```bash
+php cli sitemap
+```
 
 For this to work you'll need to create a `production/config.py` with the variables [ `host` : `str`, `port` : `int`, `username` : `str`, `password` : `str` ]
 
-`php cli deploy`
+
+```bash
+php cli deploy
+```
 
 #### PWA
 Generates all the necessary information to create a PWA with the information given
 
-`php cli pwa`
+
+```bash
+php cli pwa
+```
 
 ## Experience
 
