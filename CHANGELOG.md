@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Modified
 - `localhost` will be ignored when forcing the `HTTPS` protocol
+- Now you can use different logging files in `logging`
 
 ## 2022-01-03
 ### Added

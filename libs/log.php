@@ -15,10 +15,11 @@ function get_time(): string
  * 
  * @param string|null $message The message to log
  * @param int $log_level The log_level from which to display this message
+ * @param string $log_file The logging file to use, by default, LOG_FILE
  * 
  * @return bool
  */
-function logging(string $message = null, int $log_level = LOG_LEVEL_ALL): bool
+function logging(string $message = null, int $log_level = LOG_LEVEL_ALL, string $log_file = LOG_FILE): bool
 {
     // If it's not on the same log_level, don't log it
     if (LOG_LEVEL !== $log_level) return false;
@@ -31,7 +32,7 @@ function logging(string $message = null, int $log_level = LOG_LEVEL_ALL): bool
     $message = get_time() . " " . $message;
 
     // Write the content
-    $success = write(LOG_FILE, $message, FILE_APPEND);
+    $success = write($log_file, $message, FILE_APPEND);
 
     return $success;
 }
