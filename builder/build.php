@@ -51,6 +51,9 @@ function rebuild(string $file = null, bool $absolute = true): bool
     // Input the hew content
     $success = write($new_file_path, $content) !== false;
 
+    // Clean all the assets after each rebuild
+    Assets::clean_assets();
+
     return $success;
 }
 
