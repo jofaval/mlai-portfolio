@@ -143,6 +143,22 @@ class Assets
     }
 
     /**
+     * Adds multiple styles at once, it doesn't stop on fail, but lets you know
+     * 
+     * @param string[] the styles to add
+     * 
+     * @return bool If all the styles could be added, all or nothing
+     */
+    public static function add_styles(array $styles): bool
+    {
+        $success = true;
+
+        foreach ($styles as $style) $success &= static::add_style($style);
+
+        return $success;
+    }
+
+    /**
      * Adds an script
      * 
      * @param string $asset The asset to add
@@ -161,6 +177,22 @@ class Assets
         self::$scripts[] = $original;
 
         return true;
+    }
+
+    /**
+     * Adds multiple scripts at once, it doesn't stop on fail, but lets you know
+     * 
+     * @param string[] the scripts to add
+     * 
+     * @return bool If all the scripts could be added, all or nothing
+     */
+    public static function add_scripts(array $scripts): bool
+    {
+        $success = true;
+
+        foreach ($scripts as $script) $success &= static::add_script($script);
+
+        return $success;
     }
 
     /**

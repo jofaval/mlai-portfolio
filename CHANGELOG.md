@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Implemented error log file
 - Implement action usage by similarity, only if the input action was not close enough (exact match)
 - Create an `assets` system to globally add and retrieve the `assets` (styles and scripts, at the moment)
+- Assets can now be added in array, and checked as such
 
 ### Modified
 - `localhost` will be ignored when forcing the `HTTPS` protocol
