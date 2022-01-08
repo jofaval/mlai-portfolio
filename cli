@@ -4,5 +4,8 @@ require_once 'require.php';
 
 $action = get_action();
 
-if (function_exists($action)) $action();
-else echo "Action not found.\n";
+if (function_exists($action) || !is_null($action = find_similar_action($action))) {
+    $action();
+} else {
+    echo "Action not found.\n";
+}

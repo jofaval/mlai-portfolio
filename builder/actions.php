@@ -7,6 +7,18 @@
  */
 define('ARGS', $argv);
 
+define('ACTIONS', [
+    'deploy',
+    'create_project',
+    'sitemap',
+    'robots',
+    'create',
+    'component',
+    'action',
+    'sw',
+    'pwa',
+]);
+
 /**
  * Gets the argument required
  * 
@@ -220,3 +232,30 @@ function pwa(): void
     if ($success) logging('made pwa');
 }
 
+// TODO: find similar action calls
+
+/**
+ * Finds an action that may be similar, and returns it, first one to find, first one to use
+ * 
+ * @param string $action The action to evaluate
+ * @param float $max_penalty The number of penalties that may determine if it's similar, or not, 2 by default
+ * 
+ * @return string|null The similar action, or a null
+ */
+function find_similar_action(string $action, float $max_penalty = 2): mixed
+{
+    $match = null;
+
+    foreach (ACTIONS as $possible_action_match) {
+        $score = levenshtein($action, $possible_action_match);
+
+        // If there's an action that's similar enough, that's the winner
+        if ($score <= $max_penalty) {
+            $max_penalty = $score;
+            $match = $possible_action_match;
+            break;
+        }
+    }
+
+    return $match;
+}

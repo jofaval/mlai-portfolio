@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Projects
 - Now you can use different logging files in `logging`
 - Implemented error log file
+- Implement action usage by similarity, only if the input action was not close enough (exact match)
 
 ### Modified
 - `localhost` will be ignored when forcing the `HTTPS` protocol
