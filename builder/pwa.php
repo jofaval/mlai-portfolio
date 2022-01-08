@@ -229,7 +229,7 @@ function create_splash_screens(bool $stop_at_fail = false): bool
         // If at any given moment, a splash fails generating, stop the process
         if ($stop_at_fail && !$success) return false;
 
-        echo "\"$filename\" was generated successfully.\n";
+        echo "\"$filename\" was successfully generated.\n";
     }
 
     // TODO: should I add the logo/favicon image in the center? icons already do that
