@@ -3,6 +3,10 @@ All the log of changes on the project/repository
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2022-01-08
+### Added
+- Shortcut for `path_join` it is called `j`
+
 ## 2022-01-03
 ### Added
 - A license (GPL-3.0 License)

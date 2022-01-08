@@ -24,6 +24,14 @@ function path_join(): string
 }
 
 /**
+ * Shortcut for path_join as "j()" and then use the call_user_func_array('path_join', func_get_args())?
+ */
+function j(): string
+{
+    return call_user_func_array('path_join', func_get_args());
+}
+
+/**
  * Determins if a $needle is at the start of the $haystack
  * 
  * @param string $haystack The string
