@@ -12,7 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Projects
 
 ### Modified
-- Se ignorará `localhost` a la hora de forzar el uso `HTTPS`
+- `localhost` will be ignored when forcing the `HTTPS` protocol
 
 ## 2022-01-03
 ### Added
