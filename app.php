@@ -24,13 +24,36 @@ class Assets
     private static $scripts = [];
 
     /**
+     * Removes all the extensions from the given assets
+     * 
+     * @param string[] $assets The assets to map and evaluate
+     * 
+     * @return string[] The mappend assets without any extension 
+     */
+    private static function remove_extension(array $assets): array
+    {
+        $mapped = array_map(function(string $asset)
+        {
+            // Remove the dot and final chars
+            $asset = preg_replace('/\\.[^.\\s]{3,4}$/', '', $asset);
+
+            return $asset;
+        }, $assets);
+
+        return $mapped;
+    }
+
+    /**
      * Returns all the styles
      * 
      * @return string[]
      */
     public static function get_styles(): array
     {
-        return static::$styles;
+        // Remove the extension
+        $styles = static::remove_extension(static::$styles);
+
+        return $styles;
     }
 
     /**
@@ -40,7 +63,10 @@ class Assets
      */
     public static function get_scripts(): array
     {
-        return static::$scripts;
+        // Remove the extension
+        $scripts = static::remove_extension(static::$scripts);
+
+        return $scripts;
     }
 
     /**
@@ -52,7 +78,10 @@ class Assets
      */
     private static function preprocess(string $asset): string
     {
+        // Remove unnecessary spaces
         $preprocessed = trim($asset);
+        // Remove the extension if found
+        $preprocessed = preg_replace('/\\.[^.\\s]{3,4}$/', '', $preprocessed);
 
         return $preprocessed;
     }
