@@ -79,6 +79,13 @@ define('LIBS_DIR', path_join(BASE_DIR, 'libs'));
 define('LOG_FILE', path_join(BASE_DIR, 'logs', 'log.txt'));
 
 /**
+ * The log file
+ * 
+ * @var string
+ */
+define('ERROR_LOG_FILE', path_join(BASE_DIR, 'logs', 'error.log.txt'));
+
+/**
  * The sitemap file path
  * 
  * @var string

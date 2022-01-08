@@ -27,7 +27,7 @@ function dd()
 function general_exception_handler(Throwable $throwed, bool $display = false)
 {
     // Log the error
-    logging($throwed->__toString());
+    logging($throwed->__toString(), LOG_LEVEL_ERROR, ERROR_LOG_FILE);
 
     if ($display) dd($throwed);
 }
@@ -49,7 +49,7 @@ set_exception_handler('general_exception_handler');
 function general_error_handler(int $errno, string $errstr, string $errfile, int $errline, array $errcontext, bool $display = false): void
 {
     $message = "An error [code:$errno] with message \"$errstr\" at '$errfile:$errline'";
-    logging($message);
+    logging($message, LOG_LEVEL_ERROR, ERROR_LOG_FILE);
 
     if ($display) dd($message);
 }
