@@ -42,6 +42,7 @@ $content = ob_get_clean();
 
 $layout = c('main', [
     'content' => $content,
+    'title'   => 'Contact',
 ], LAYOUTS_DIR);
 
 echo $layout;

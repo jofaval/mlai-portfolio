@@ -31,6 +31,7 @@ $styles = [
 $layout = c('main', [
     'content' => $content,
     'styles'  => $styles,
+    'title'   => 'Projects',
 ], LAYOUTS_DIR);
 
 echo $layout;
