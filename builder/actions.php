@@ -214,7 +214,7 @@ function pwa(): void
     // Log the message
     echo $success
         ? "Succesfully converted to PWA\n"
-        : "Couldn\'t import conver to PWA\n";
+        : "Couldn\'t convert to PWA\n";
 
     // Log the PWA conversion
     if ($success) logging('made pwa');
