@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 - Shortcut for `path_join` it is called `j`
 
+### Modified
+- Se ignorará `localhost` a la hora de forzar el uso `HTTPS`
+
 ## 2022-01-03
 ### Added
 - A license (GPL-3.0 License)

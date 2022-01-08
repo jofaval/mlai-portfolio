@@ -6,7 +6,7 @@ RewriteRule ^([^.]+)$ $1.html [NC,L]
 # Force HTTPS usage
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteCond %{HTTPS} off
-RewriteCond %{REMOTE_ADDR} !127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}
+# RewriteCond %{REMOTE_ADDR} !127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Gzip [Dynamic] Compression
