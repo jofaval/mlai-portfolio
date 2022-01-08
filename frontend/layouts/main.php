@@ -1,5 +1,7 @@
 <?php
 
+Assets::add_style('main');
+
 // Implement default content
 if (!isset($content)) $content = 'TODO: implement';
 if (!isset($props['styles'])) $props['styles'] = [];

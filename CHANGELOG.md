@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Modified
 - `localhost` will be ignored when forcing the `HTTPS` protocol
 - Assets retrieval will now remove the extension from each asset, on the `get` and on the `set`
+- Refactor styles so it now uses the `Assests::add_style()` functionality
 
 ### News
 - Implemented pending features and improvements that were procrastinated for longer than necessary

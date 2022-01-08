@@ -1,7 +1,7 @@
-<?php $default_styles = [ 'main', 'header', 'footer', 'components/skip-navigation' ] ?>
+<?php $default_styles = [] ?>
 
 <?php if (!isset($styles)) $styles = []; ?>
-<?php $styles = array_unique( array_merge($styles, $default_styles) ) ?>
+<?php $styles = array_unique( array_merge($styles, $default_styles, Assets::get_styles()) ) ?>
 
 <?php $style_path = path_join(BUILD_DIR, 'styles', "$target.css") ?>
 

@@ -6,6 +6,9 @@ $links = [
     [ 'label' => 'Contact', 'href' => 'contact.html' ],
 ];
 
+Assets::add_style('header');
+Assets::add_style('components/skip-navigation');
+
 ?>
 
 <nav>

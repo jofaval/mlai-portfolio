@@ -42,6 +42,8 @@
     'figure' => true,
 ]) ?>
 
+<?php Assets::add_script('contact'); ?>
+
 <table class="contact-table">
     <tr>
         <td><strong>Full Name:&nbsp;</strong></td>
@@ -70,9 +72,7 @@
 
 $content = ob_get_clean();
 
-$styles = [
-    'contact'
-];
+$styles = [];
 
 $scripts = [
 

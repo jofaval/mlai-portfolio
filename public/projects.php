@@ -1,5 +1,7 @@
 <?php ob_start(); ?>
 
+<?php Assets::add_style('projects'); ?>
+
 <h1>All my projects/portfolio page</h1>
 <h2 class="no-counter">All the projects I have participated in or researched on my own.</h2>
 
@@ -24,9 +26,7 @@
 
 $content = ob_get_clean();
 
-$styles = [
-    'projects'
-];
+$styles = [];
 
 $layout = c('main', [
     'content' => $content,
