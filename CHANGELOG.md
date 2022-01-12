@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## 2022-01-12
 ### Modified
 - Changed the shell markup lang to it's propery lang
+- Move all the utilities to a `tools/` folder
 
 ## 2022-01-08
 ### Added
