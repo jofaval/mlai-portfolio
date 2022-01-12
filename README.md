@@ -25,36 +25,36 @@ It comes from **M**achine **L**earning and **A**rtificial **I**ntelligence. It's
 
 #### Compile the site
 
-```bash
+```shell
 php cli build
 ```
 
 Or 
-```bash
+```shell
 php cli rebuild file[.php]
 ```
 for a specific file
 
 #### Generate the sitemap
 
-```bash
+```shell
 php cli sitemap
 ```
 
 #### Deploy
 It does a 
-```bash
+```shell
 php cli build
 ```
 internally and a
-```bash
+```shell
 php cli sitemap
 ```
 
 For this to work you'll need to create a `production/config.py` with the variables [ `host` : `str`, `port` : `int`, `username` : `str`, `password` : `str` ]
 
 
-```bash
+```shell
 php cli deploy
 ```
 
@@ -62,7 +62,7 @@ php cli deploy
 Generates all the necessary information to create a PWA with the information given
 
 
-```bash
+```shell
 php cli pwa
 ```
 
