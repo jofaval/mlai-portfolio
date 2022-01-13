@@ -4,6 +4,9 @@ All the log of changes on the project/repository
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## 2022-01-13
+### Added
+- Created a server to `serve` the production build files while also starting the observer (Bob The Builder)
+
 ### Modified
 - Refactor choice into constants to have a better control of the build system
 - Refacor constants into separate files

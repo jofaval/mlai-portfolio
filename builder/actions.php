@@ -232,7 +232,17 @@ function pwa(): void
     if ($success) logging('made pwa');
 }
 
-// TODO: find similar action calls
+/**
+ * Start serving the web
+ * 
+ * @return void
+ */
+function serve(): void
+{
+    logging('Start serving at localhost:42069');
+
+    exec('cd tools && server.bat');
+}
 
 /**
  * Finds an action that may be similar, and returns it, first one to find, first one to use

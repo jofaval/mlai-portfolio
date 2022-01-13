@@ -30,6 +30,20 @@ php bob
 
 And now that Bob is booted you can freely work on the public files without having to rebuild them manually
 
+### Local server
+
+To initialize a local server with the observer run the following command:
+
+```shell
+tools/server.bat
+```
+
+or use the CLI
+
+```shell
+php cli serve
+```
+
 ### CLI
 **C**ommand **L**ine **I**nterface, it's the built-in utility for bash interaction with the actions.
 
