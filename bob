@@ -226,7 +226,7 @@ class BobTheBuilder
             self::$TIME_KEY          => $filetime,
         ];
 
-        // Check if it's need to be updated
+        // Check if it's need to be updated, could it be assignation, but it's clearer this way
         if ($this->files[$file][self::$TIME_KEY] < $filetime) {
             $this->files[$file][self::$NEEDS_REBUILD_KEY] = true;
         }
