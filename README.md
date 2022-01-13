@@ -23,7 +23,7 @@ It comes from **M**achine **L**earning and **A**rtificial **I**ntelligence. It's
 
 Bob The Builder is an observer that helps you not having to use the CLI that much, or at all!
 
-This with boot Bob
+This will boot Bob
 ```shell
 php bob
 ```
