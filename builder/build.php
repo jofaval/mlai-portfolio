@@ -187,10 +187,10 @@ function build(): bool
         echo "\"$filename\" has been compiled, A total of $progress% has been compiled, ($human_file_index/$total_files).\n";
     }
 
-    sitemap();
-    robots();
-    sw();
-    pwa();
+    if (GENERATE_SITEMAP) sitemap();
+    if (GENERATE_ROBOTS) robots();
+    if (GENERATE_SERVICE_WORKER) sw();
+    if (GENERATE_PWA) pwa();
 
     logging('built');
 

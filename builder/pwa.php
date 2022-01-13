@@ -283,12 +283,14 @@ function make_pwa(): bool
     $success = true;
 
     // All the steps for making the app a Progressive Web-App
-    $steps = [
-        'create_icons',
-        'create_splash_screens',
-        'create_screenshots',
-        'create_manifest',
-    ];
+    $steps = [];
+
+    if (GENERATE_ICONS) $steps[] = 'create_icons';
+    if (GENERATE_SPLASHSCREENS) $steps[] = 'create_splash_screens';
+    if (GENERATE_SCREENSHOTS) $steps[] = 'create_screenshots';
+
+    // The last step, mandatory, can not be skipped
+    $steps[] = 'create_manifest';
 
     // Execute all the steps
     foreach ($steps as $step) {
