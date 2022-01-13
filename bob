@@ -229,7 +229,6 @@ class BobTheBuilder
         // Check if it's need to be updated
         if ($this->files[$file][self::$TIME_KEY] < $filetime) {
             $this->files[$file][self::$NEEDS_REBUILD_KEY] = true;
-            $this->log_message("\"$file\" change detected");
         }
 
         // Save the new time
