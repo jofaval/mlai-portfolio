@@ -208,6 +208,21 @@ class BobTheBuilder
     }
 
     /**
+     * Detects if a file was updated or not
+     * 
+     * @param string $file The file name
+     * @param int $filetime The modification date of the file
+     * 
+     * @return bool Was it updated?
+     */
+    private function was_file_updated(string $file, int $filetime): bool
+    {
+        $updated = $this->files[$file][self::$TIME_KEY] < $filetime;
+
+        return $updated;
+    }
+
+    /**
      * Stores the file time of a single file
      * 
      * @param string $file The fiel to evaluate
@@ -227,7 +242,7 @@ class BobTheBuilder
         ];
 
         // Check if it's need to be updated, could it be assignation, but it's clearer this way
-        if ($this->files[$file][self::$TIME_KEY] < $filetime) {
+        if ($this->was_file_updated($file, $filetime)) {
             $this->files[$file][self::$NEEDS_REBUILD_KEY] = true;
         }
 
