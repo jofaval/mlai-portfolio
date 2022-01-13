@@ -19,6 +19,16 @@ It comes from **M**achine **L**earning and **A**rtificial **I**ntelligence. It's
 - Minify external library
 - ImageMagick library
 
+### Bob The Builder
+
+Bob The Builder is an observer that helps you not having to use the CLI that much, or at all!
+
+This with boot Bob
+```shell
+php bob
+```
+
+And now that Bob is booted you can freely work on the public files without having to rebuild them manually
 
 ### CLI
 **C**ommand **L**ine **I**nterface, it's the built-in utility for bash interaction with the actions.
