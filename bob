@@ -74,7 +74,7 @@ class BobTheBuilder
 
     /**
      * **WARNING!!**
-     * it's a recursive function, so it may be efficient heavy,
+     * it's a recursive function, so it may be performance heavy,
      * don't run on `node_modules/` or `vendor/` folders\
      * Returns all the files to evaluate
      * 
