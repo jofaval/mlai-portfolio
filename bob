@@ -1,0 +1,317 @@
+<?php
+
+require 'require.php';
+
+/**
+ * The number of seconds that will play as interval to observe
+ * 
+ * @var float
+ */
+define('OBSERVE_EVERY', .1);
+
+/**
+ * A class to observe the changes in files
+ */
+class BobTheBuilder
+{
+    /**
+     * Check the files in the observer every X miliseconds, by default every .5 seconds
+     * 
+     * @var int
+     */
+    private static $CHECK_EVERY;
+
+    /**
+     * The files to be evaluated
+     * 
+     * @var string[]
+     */
+    private $files;
+
+    /**
+     * Is it already observing?
+     * 
+     * @var bool
+     */
+    private static $BOOTED;
+
+    /**
+     * The target dir to observe
+     * 
+     * @var string
+     */
+    private static $TARGET_DIR;
+
+    /**
+     * Is the building on a debugging phase
+     * 
+     * @var bool
+     */
+    private static $DEBUGGING = false;
+
+    /**
+     * The key for the time index
+     * 
+     * @var string
+     */
+    private static $TIME_KEY = 'time';
+
+    /**
+     * The key for the needs_rebuild index
+     * 
+     * @var string
+     */
+    private static $NEEDS_REBUILD_KEY = 'needs_rebuild';
+
+    /**
+     * Initialize the builder
+     * 
+     * @return $this
+     */
+    public function __construct() {
+        $this->on_init();
+    }
+
+    /**
+     * **WARNING!!**
+     * it's a recursive function, so it may be efficient heavy,
+     * don't run on `node_modules/` or `vendor/` folders\
+     * Returns all the files to evaluate
+     * 
+     * @param string $dir The path to evaluate
+     * @param string[] $files All the files
+     * 
+     * @return string[] The files to evaluate
+     */
+    private function get_files(string $dir, array $files = null): array
+    {
+        $is_root = is_null($files);
+
+        // If the files are empty, initialize as an empty array
+        if ($is_root) $files = [];
+
+        // Get all the files in a directory
+        $files_to_evaluate = array_diff(scandir($dir), [ '.', '..' ]);
+
+        // If the files could not be retrieved, return the current ones
+        if (!is_array($files_to_evaluate)) return $files;
+
+        // Recursively evaluate all the files that are not dir
+        foreach ($files_to_evaluate as $file) {
+            // Add the root path to the file, if it's the root call
+            $file = j($dir, $file);
+
+            if (is_file($file)) $files[] = $file;
+            // If it's a dir, merge the found files with the current ones
+            else if (is_dir($file)) {
+                $nested_files = $this->get_files($file, $files);
+                $files = array_merge($files, $nested_files);
+            }
+        }
+
+        return $files;
+    }
+
+    /**
+     * Initialize all the values
+     * 
+     * @return void
+     */
+    private function initialize()
+    {
+        $this->files = [];
+        self::$CHECK_EVERY = OBSERVE_EVERY * pow(10, 6);
+        self::$BOOTED = false;
+        self::$TARGET_DIR = PUBLIC_DIR;
+    }
+
+    /**
+     * All the elements to prepare to properly use the builder
+     * 
+     * @return void
+     */
+    private function on_init(): void
+    {
+        // Initialize all the values
+        $this->initialize();
+
+        // Check the files at the start
+        $this->check(self::$TARGET_DIR);
+    }
+
+    /**
+     * Start the builder
+     * 
+     * @return void
+     */
+    public static function boot(): void
+    {
+        $bob = new static;
+
+        // Say Hello!
+        $bob->log_message("Bob the builder has booted successfully");
+
+        // Start the observer
+        $bob->observe(self::$TARGET_DIR);
+    }
+
+    /**
+     * Log a message to the caller
+     * 
+     * @param string $message The text to display
+     * @param bool $debug_only Is a debug only message? It won't be by default
+     * 
+     * @return void
+     */
+    private function log_message(string $message = '', bool $debug_only = false): void
+    {
+        // If it's debug only, check if Bob is on debug
+        if ($debug_only && !self::$DEBUGGING) return;
+
+        // If it doesn't end on jumpline, add it
+        if ($message[strlen($message) - 1] != "\n") $message .= "\n";
+
+        echo $message;
+    }
+
+    /**
+     * Get the file name
+     * 
+     * @param string $file The file path
+     * 
+     * @return int The timestamp, if the file exists
+     */
+    private function get_file_time(string $file): int
+    {
+        // If the file doesn't exist, return -1
+        if (!file_exists($file)) return -1;
+
+        return filemtime($file);
+    }
+
+    /**
+     * Stores the file time of a single file
+     * 
+     * @param string $file The fiel to evaluate
+     * 
+     * @return void
+     */
+    private function save_file_time(string $file): void
+    {
+        $filetime = $this->get_file_time($file);
+        // Don't process it if the time is not valid
+        if ($filetime == -1) return;
+
+        // If the file doesn't exist, create it with some default values
+        if (!isset($this->files[$file])) $this->files[$file] = [
+            self::$NEEDS_REBUILD_KEY => false,
+            self::$TIME_KEY          => $filetime,
+        ];
+
+        // Check if it's need to be updated
+        if ($this->files[$file][self::$TIME_KEY] < $filetime) {
+            $this->files[$file][self::$NEEDS_REBUILD_KEY] = true;
+            $this->log_message("\"$file\" change detected");
+        }
+
+        // Save the new time
+        $this->files[$file][self::$TIME_KEY] = $filetime;
+    }
+
+    /**
+     * Saves the time of the given files
+     * 
+     * @param string[] $files The array of all the file paths
+     * 
+     * @return bool If the times could be saved
+     */
+    private function save_times(array $files): bool
+    {
+        $success = true;
+
+        foreach ($files as $file) {
+            // Only process the files that exist and are files
+            $is_a_valid_file = file_exists($file) && is_file($file);
+            if (!$is_a_valid_file) continue;
+
+            // Save the file time
+            $this->save_file_time($file);
+        }
+
+        return $success;
+    }
+
+    /**
+     * Update all the files
+     * 
+     * @return void
+     */
+    private function update_files(): void
+    {
+        foreach ($this->files as $file => $details) {
+            // Don't update files that don't need it
+            if (!$this->files[$file][self::$NEEDS_REBUILD_KEY]) continue;
+
+            $this->log_message("Changes detected in the file: \"$file\".");
+
+            // Recompile the file
+            rebuild($file);
+
+            $this->log_message("File successfully rebuilt!");
+
+            // It no longer needs to be rebuilt
+            $this->files[$file][self::$NEEDS_REBUILD_KEY] = false;
+            // Update the time after the rebuilding, to avoid possible bugs
+            $this->files[$file][self::$TIME_KEY] = $this->get_file_time($file);
+        }
+    }
+
+    /**
+     * Checks the files that might need a rebuild
+     * 
+     * @param string $target_dir The dir to check
+     * 
+     * @return void
+     */
+    private function check(string $target_dir): void
+    {
+        // Get the files to evaluate
+        $files = $this->get_files($target_dir);
+
+        // Save all the times
+        $this->save_times($files);
+
+        // Update all the files that need it
+        $this->update_files();
+    }
+
+    /**
+     * Initializes the observer if not already started
+     * 
+     * @param string $target_dir The dir to observe, by default the public dir
+     * 
+     * @return void
+     */
+    private function observe(string $target_dir = PUBLIC_DIR): void
+    {
+        // Don't observe if it's already observing
+        if (self::$BOOTED) return;
+
+        // Flag the booted as started
+        self::$BOOTED = true;
+
+        // Run infinitely
+        while (true) {
+            $this->log_message('Observing possible changes...', true);
+
+            // Check the files
+            $this->check($target_dir);
+
+            // Set a sleep so it's not checking too much
+            usleep(self::$CHECK_EVERY);
+        }
+    }
+}
+
+// Boot the builder and start the observer
+BobTheBuilder::boot();

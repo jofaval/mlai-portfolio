@@ -4,6 +4,9 @@ All the log of changes on the project/repository
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## 2022-01-12
+### Added
+- Created Bob the Builder as an observer in the `public/` directory
+
 ### Modified
 - Changed the shell markup lang to it's propery lang
 - Move all the utilities to a `tools/` folder
