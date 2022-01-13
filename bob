@@ -139,6 +139,24 @@ class BobTheBuilder
         $this->check(self::$TARGET_DIR);
     }
 
+    private function initial_message(): void
+    {
+        $this->log_message("Bob the builder has booted successfully");
+
+        // ASCII message generated with: https://patorjk.com/software/taag/#p=display&f=Graffiti&t=BoB
+        $this->log_message();
+        $this->log_message("__________      __________ ");
+        $this->log_message("\______   \ ____\______   \\");
+        $this->log_message("|    |  _//  _ \|    |  _/");
+        $this->log_message("|    |   (  <_> )    |   \\");
+        $this->log_message("|______  /\____/|______  /");
+        $this->log_message("        \/              \/ ");
+        $this->log_message();
+
+        $this->log_message('Welcome...');
+        $this->log_message();
+    }
+
     /**
      * Start the builder
      * 
@@ -149,7 +167,7 @@ class BobTheBuilder
         $bob = new static;
 
         // Say Hello!
-        $bob->log_message("Bob the builder has booted successfully");
+        $bob->initial_message();
 
         // Start the observer
         $bob->observe(self::$TARGET_DIR);
