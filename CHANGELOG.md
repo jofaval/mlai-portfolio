@@ -3,6 +3,12 @@ All the log of changes on the project/repository
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2022-01-14
+
+### Modified
+
+- Add proper spacing between sections in the README
+
 ## 2022-01-13
 ### Added
 - Created a server to `serve` the production build files while also starting the observer (Bob The Builder)
