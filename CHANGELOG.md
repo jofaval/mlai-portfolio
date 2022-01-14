@@ -7,26 +7,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Modified
 
-- Add proper spacing between sections in the README
+- Add proper spacing between sections in the README, and in the CHANGELOG, it helps to visually identify elements
 
 ## 2022-01-13
+
 ### Added
+
 - Created a server to `serve` the production build files while also starting the observer (Bob The Builder)
 
 ### Modified
+
 - Refactor choice into constants to have a better control of the build system
 - Refacor constants into separate files
 
 ## 2022-01-12
+
 ### Added
+
 - Created Bob the Builder as an observer in the `public/` directory
 
 ### Modified
+
 - Changed the shell markup lang to it's propery lang
 - Move all the utilities to a `tools/` folder
 
 ## 2022-01-08
+
 ### Added
+
 - Shortcut for `path_join` it is called `j`
 - Link component now can have an ID
 - Title to pages
@@ -39,38 +47,51 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Assets can now be added in array, and checked as such
 
 ### Modified
+
 - `localhost` will be ignored when forcing the `HTTPS` protocol
 - Assets retrieval will now remove the extension from each asset, on the `get` and on the `set`
 - Refactor styles so it now uses the `Assests::add_style()` functionality
 
 ### News
+
 - Implemented pending features and improvements that were procrastinated for longer than necessary
 
 ## 2022-01-03
+
 ### Added
+
 - A license (GPL-3.0 License)
 - CHANGELOG.md standard
 - Documented the file structure
 
 ### Modified
+
 - Update wiki pages
 - Now CLI commands use proper `markdown` marking
 
 ## 2022-01-02
+
 ### Added
+
 - Header and footer links are now `button-like` (modification/improvement needed), providing easier touchability on smartphones
 
 ## 2021-12-28
+
 ### Added
+
 - `cli pwa` to the README.md
 
 ## 2021-12-27
+
 ### Added
+
 - The scroll behaviour is now `smooth`
 - Added `skip-navigation` accessibility element, mainly because of [this video](https://www.youtube.com/watch?v=jDDaOFr9nqQ).
 
 ## 2021-12-26
+
 ### Added
+
 - Splash screens generation
   - And added to the `manifest.json`
 - Implement the possibility of using `public_url` without the domain
@@ -88,9 +109,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Add offline work
 
 ### Achieved
+
 - Got a `240` score on https://pwabuilder.com
 
 ### Modified
+
 - All icons now have an `any maskable` `purpose`
 - Fully implement web `related_applications`
 - Now `minify_pre` also removes HTML comments `<!-- -->`
@@ -98,11 +121,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Implement the `create_dir`
 
 ### Fixed
+
 - Fixed chrome scrollbar `background-color`
 - Use proper `categories` in `manifest.json`
 
 ## 2021-12-25
+
 ### Added
+
 - `<img>` component now loads the dimensions onto the img
 - `serviceWorker` is now implemented caching all pages
 - Create a `serviceWorker` action and add it to the `cli build`
@@ -124,6 +150,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Tested on production PWA is now FULLY FUNCTIONAL!!!
 
 ### Modified
+
 - Contact `<img>` loaded directly
 - Move `IGNORE_FILES` to constants file
 - Use styles and scripts constants
@@ -133,18 +160,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Modify the manifest and theme color
 
 ### Fixed
+
 - `path_join` didn't take into account dirs ending or starting with a `/`
 - Incorrect `log` usage, meant `logging`
 
 ## 2021-12-24
+
 ### Modified
+
 - `lastmod` on sitemap, with full modification datetime
 
 ### Fixed
+
 - Scrollbar color
 
 ## 2021-12-23
+
 ### Added
+
 - Lazy loading on `<img>` by default
 - Add `canonical` url
 - `robots.txt` file generation
@@ -158,6 +191,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Create projects page with project listing (using file reading)
 
 ### Modified
+
 - Now the `<img>` changes only once in the code
 - Change `utf-8` encoding to `UTF-8`
 - `changefreq` on sitemap generation is now on `weekly`
@@ -169,13 +203,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `hire-me` label is now customizable
 
 ### Fixed
+
 - `get_public_url` didn't work for `build` or `img` paths
 - Replace `function` type on Python for correct `Callable` type
 - Fixed files generation after the deploy (and build) was already done
 - Links having a different color if previously visited
 
 ## 2021-12-22
+
 ### Added
+
 - Added `no-counter` now some headers won't be counted
 - Each `cli build` will get logged
 - Add `replace_extension` for an easier replacement
@@ -194,6 +231,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Documen the CLI interaction and configuration
 
 ### Modified
+
 - Added "Link to" to `aria-label` in links for a more cohesive screen-reading
 - `#page-title` is not an `<h1>` and each page can have it's own `<h1>`
 - Extract `hire-me` component from contact link in footer
@@ -205,12 +243,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Extract zip file writting in `upload.py`
 
 ### Fixed
+
 - Attempting to minify images with HTML minification
 - Correctly log errors on th exception_handler
 - `.htaccess` custom error documents, using a `./` instead of a `/` and a `.htaccess` not fully updated on production
 
 ## 2021-12-21
+
 ### Added
+
 - Scrollbar color is now updated
 - Add `Content-Security Policy`. Extra layer of security
 - Implement `deploy` in the `cli`
@@ -225,6 +266,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Implement a `minify_html` in `rebuild`
 
 ### Modified
+
 - Links now also have `aria-label` for screenreaders
 - Move styles to it's own component
 - Now all layouts pass the `target`
@@ -233,13 +275,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Implement `minify_pre` for preprocessing
 
 ### Fixed
+
 - `mkdir` on file `write` was creating the whole file path as a dir
 - Styling not working, `Content-Secure Policy` inline `self` block
 - Sanitize `label` before inputing it in `aria-label` so that it only reads text
 - Incorrect date timezone fixed, it is now `Europe/Madrid`
 
 ## 2021-12-20
+
 ### Added
+
 - HTML SEO description
 - Style and scripts asset props
 - Error layout
@@ -249,11 +294,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - .html at the end of the url will now be implied
 
 ### Modified
+
 - `styles` and `scripts` now load from the head "dinamically"
 - Implement `get_all_files` decorator
 - In `cli build` an `.html` file gets **overrided** by a `.php` one, if they share the same name
 
 ### Fixed
+
 - `build.bat` incorrect call, used to be `rebuild`
 - Prevent constant redifining
 - Incorrect `str_ends_with` implementation
@@ -261,7 +308,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - HTML `charset` must be in the first 1024 bytes
 
 ## 2021-12-19
+
 ### Added
+
 - StackOverflow story social link
 - `dd()` for debugging
 - Ignore build and config files
@@ -281,6 +330,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Dummy `index.php` root home
 
 ### Modified
+
 - Improved README.md
 - `cli build` now creates subfolders if doesn't previously exist
 - Implement `get_content`
@@ -289,6 +339,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Add total time to `upload.py` and translate some text
 
 ### Fixed
+
 - Build target dir is now the correct path
 - Add missing, get_content in `cli build`
 - `str_contains` buggin the `IGNORE_FILES` logic, it was cheking `str_pos` for an `int` not a `bool`
@@ -296,6 +347,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## 2021-12-15
 
 ### Added
+
 - Footer styling
 - Social links in footer
 - Implement Gzip compression on files
@@ -304,6 +356,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## 2021-12-14
 
 ### Added
+
 - Utils file
   - Path join utility
 - Require file
@@ -313,6 +366,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## 2021-12-13
 
 ### Added
+
 - Project started
 - Subdomain successfully created
 - .htaccess created with forceful HTTPS redirection
