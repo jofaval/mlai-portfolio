@@ -3,6 +3,12 @@
 <!-- For testing purpose -->
 <!-- (h2.title{Section Title}+p{lorem*5}+h3{Section Subtitle}*3+p{lorem*5}+h4{Subsection title}*4+p{lorem*5}+h5{Subsection subtitle}*3+p{lorem*5}+h6{Subsection Detail}*5+p{lorem*5})*3 -->
 
+<?= c('img', [
+    'class'  => 'original',
+    'alt'    => 'jofaval',
+    'src'    => get_public_url( minify_img(path_join(IMG_DIR, 'jofaval.jpg')) ),
+    'lazy'   => false,
+]) ?>
 <h1>Pepe Fabra Valverde: Machine Learning & Artificial Intelligence Portfolio</h1>
 <h2 class="no-counter">Machine Learning & Artificial Intelligence student</h2>
 
